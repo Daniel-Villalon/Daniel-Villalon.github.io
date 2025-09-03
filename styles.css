@@ -454,78 +454,7 @@ section{ padding: var(--space-6) 0; }
   .gallery img{ height: 240px; }
 }
 
-/* ===== Carousel (CineSync demos) ===== */
-.carousel{
-  position: relative;
-  border: 3px solid var(--ink);
-  border-radius: 16px;
-  box-shadow: 8px 8px 0 rgba(0,0,0,.16);
-  background: #fff;
-  overflow: hidden;
-  margin-top: 14px;
-}
-.carousel-track{
-  display: flex;
-  transition: transform .45s ease;
-  will-change: transform;
-  align-items: center;
-}
-.slide{
-  min-width: 100%;
-  display: grid;
-  grid-template-rows: auto auto;
-  background: #000;
-}
-.slide img{
-  width: 100%;
-  height: clamp(260px, 48vw, 520px);
-  object-fit: contain;
-  background: #000;
-  display: block;
-}
-.slide figcaption{
-  padding: 10px 14px;
-  background: #f7fbfa;
-  border-top: 1px solid #e6eeec;
-  font-size: .95rem;
-}
-
-/* arrows */
-.carousel-btn{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  border: 3px solid var(--ink);
-  background: var(--chip);
-  box-shadow: 6px 6px 0 rgba(0,0,0,.16);
-  font-size: 26px;
-  line-height: 1;
-  cursor: pointer;
-}
-.carousel-btn.prev{ left: 10px; }
-.carousel-btn.next{ right: 10px; }
-
-/* dots */
-.carousel-dots{
-  position: absolute;
-  left: 50%; transform: translateX(-50%);
-  bottom: 10px;
-  display: flex; gap: 8px;
-}
-.carousel-dots button{
-  width: 10px; height: 10px; border-radius: 999px;
-  border: 2px solid var(--ink);
-  background: #fff;
-  opacity: .6;
-}
-.carousel-dots button[aria-current="true"]{
-  background: var(--brand-2);
-  opacity: 1;
-}
+/* ===== Simple Carousel (CineSync demos) ===== */
 
 /* Lightbox smooth open/close animation */
 @media (prefers-reduced-motion: no-preference){
@@ -629,23 +558,7 @@ section{ padding: var(--space-6) 0; }
 
 
 
-/* Scope 3D coverflow to carousels that explicitly opt in */
-.carousel:not(.coverflow) .carousel-track{ perspective: none; }
-.carousel:not(.coverflow) .slide{ transform: none; opacity: 1; }
-
-/* Optional: if you later want 3D, just add class="carousel coverflow" to that block */
-.coverflow .carousel-track{
-  perspective: 1200px;
-}
-.coverflow .slide{
-  transform: scale(0.75) rotateY(25deg);
-  opacity: 0.5;
-}
-.coverflow .slide.is-active{
-  transform: scale(1) rotateY(0deg);
-  opacity: 1;
-  z-index: 2;
-}
+/* (removed unused .carousel coverflow styles) */
 
 /* ==== CineSync: make 'Our Goals' image full-width, centered, responsive ==== */
 #project-cinesync .gallery { 
@@ -869,7 +782,7 @@ section{ padding: var(--space-6) 0; }
 }
 
 /* === Global Retro Shadow Override (scoped by selectors) === */
-:root{ --retro-shadow: 6px 5px 0 rgba(0,0,0, 16); }
+:root{ --retro-shadow: 6px 5px 0 rgba(0,0,0,.16); }
 
 /* Core frames */
 .site-nav,
@@ -877,8 +790,6 @@ section{ padding: var(--space-6) 0; }
 .card,
 .gallery figure,
 .project-explainer,
-.carousel,
-.carousel-btn,
 .lightbox img,
 .lightbox-close,
 .about-photo,
@@ -912,7 +823,6 @@ section{ padding: var(--space-6) 0; }
 .header-content,
 section,
 .card,
-.carousel,
 .lightbox img,
 .about-photo{
   box-shadow: none !important;
@@ -923,7 +833,7 @@ section,
 /* === Details toggle shadow: separately adjustable === */
 :root{
   /* Configure ONLY the details caret shadow here */
-  --retro-shadow-details: 4px -3px 0 rgba(0,0,0,16);
+  --retro-shadow-details: 4px -3px 0 rgba(0,0,0,.16);
 }
 
 /* Apply separate shadow just for the caret buttons in project details */
@@ -941,7 +851,7 @@ section,
   border: 3px solid var(--ink);
   border-radius: 14px;
   padding: 14px 16px;
-  box-shadow: var(--retro-shadow-inner, 6px 6px 0 rgba(0,0,0,16));
+  box-shadow: var(--retro-shadow-inner, 6px 6px 0 rgba(0,0,0,.16));
   margin-bottom: 12px;
 }
 #project-campus-parking .project-intro h4,
@@ -974,7 +884,7 @@ section,
   border: 3px solid var(--ink);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: var(--retro-shadow-inner, 6px 6px 0 rgba(0,0,0,16));
+  box-shadow: var(--retro-shadow-inner, 6px 6px 0 rgba(0,0,0,.16));
 }
 #project-campus-parking .featured-hero img{
   display: block;
@@ -999,7 +909,7 @@ section,
   position: absolute; right: 6px; top: 50%; transform: translateY(-50%) rotate(90deg);
   width: 26px; height: 26px; line-height: 26px; text-align: center;
   border: 3px solid var(--ink); border-radius: 8px; background: #fff; font-weight: 900;
-  box-shadow: var(--retro-shadow-inner, 6px 6px 0 rgba(0,0,0,16));
+  box-shadow: var(--retro-shadow-inner, 6px 6px 0 rgba(0,0,0,.16));
 }
 #project-campus-parking .project-details[open] > summary.btn::after{
   transform: translateY(-50%) rotate(270deg);
@@ -1042,8 +952,6 @@ section,
 
 /* Ensure outer cards/containers remain clean */
 #project-cinesync.card,
-#project-cinesync .carousel,
-#project-campus-parking.card,
-#project-campus-parking .carousel {
+#project-campus-parking.card {
   box-shadow: none !important;
 }
