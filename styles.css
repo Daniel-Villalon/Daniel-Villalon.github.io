@@ -1,0 +1,977 @@
+/* ========== Base + Variables ========== */
+:root{
+  --container: 920px;
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+
+  --bg: #f7fbfa;
+  --ink: #20302a;
+  --muted: #5b6d66;
+
+  --brand: #0a4f45;     /* forest green */
+  --brand-2: #0e6b5d;
+  --chip: #e5f5ef;
+  --card: #ffffff;
+
+  --shadow-1: 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-2: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  font: 16px/1.55 Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+/* Container */
+.container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+/* Headings */
+h1,h2,h3{
+  margin: 0 0 var(--space-3);
+  color: var(--ink);
+  font-family: Georgia, serif;
+}
+h1{ font-size: 3rem; line-height: 1.1; }
+h2{ font-size: 2rem; line-height: 1.2; }
+h3{ font-size: 1.25rem; }
+
+p{ margin: 0 0 var(--space-3); color: var(--ink); }
+a{ color: var(--brand-2); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+/* ========== Nav ========== */
+.site-nav{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffffcc;
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-1);
+}
+.nav-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.brand{
+  font-weight: 700;
+  color: var(--brand);
+  letter-spacing: 1px;
+}
+.nav-links{
+  list-style: none;
+  display: flex;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+}
+.nav-link{
+  color: var(--ink);
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color .2s, color .2s;
+}
+.nav-link:hover{ color: var(--brand-2); }
+.nav-link.active{
+  border-color: var(--brand-2);
+  color: var(--brand-2);
+}
+
+/* ========== Hero / Header ========== */
+.hero{
+  position: relative;
+  color: #fff;
+  text-align: center;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(rgba(0,34,34,0.50), rgba(0,34,34,0.50)),
+    url("photos/ireland_pic1.jpg") center/cover no-repeat;
+}
+.hero-inner{ padding: var(--space-7) 0; }
+.header-content{
+  background: rgba(0, 51, 47, 0.72);
+  display: inline-block;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-6);
+  border-radius: 18px;
+  box-shadow: var(--shadow-2);
+  max-width: 90vw;
+}
+.header-content h1{
+  color: #fff;
+  -webkit-text-stroke: 1px #111;
+}
+.header-content p{ color: #eef6f4; }
+.header-links a{ color: #a7ffeb; font-weight: 700; }
+.header-links .sep{ color: #cdebe5; margin: 0 var(--space-2); }
+
+/* ========== Sections ========== */
+section{
+  padding: var(--space-7) 0;
+}
+section h2{
+  border-bottom: 3px solid var(--brand);
+  padding-bottom: 8px;
+  margin-bottom: var(--space-5);
+}
+
+/* About layout */
+.about-flex{
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+.about-text{ flex: 1; min-width: 260px; }
+
+.about-photo{
+  width: 420px;
+  max-width: 50%;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(46,187,120,0.24);
+  transition: transform .25s, box-shadow .25s;
+  object-fit: cover;
+  height: auto;
+}
+.about-photo:hover{
+  transform: scale(1.05) rotate(-1.5deg);
+  box-shadow: 0 12px 32px rgba(85,220,160,0.33);
+}
+
+/* Courses (click-to-expand) */
+.course-list{ list-style: none; padding: 0; margin: 0; }
+.course-item{
+  display: inline-block;
+  margin: 0 var(--space-2) var(--space-2) 0;
+  cursor: pointer;
+}
+.course-description{
+  display: none;
+  background: #e0f2f1;
+  border-left: 4px solid #0b5a4f;
+  padding: var(--space-3);
+  margin: 0 0 var(--space-3) 0;
+  border-radius: 8px;
+}
+
+/* Chips + Cards */
+.chips{ display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.chip{
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--chip);
+  color: var(--brand-2);
+  border: 1px solid #cfece4;
+  font-size: 0.9rem;
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid #e6eeec;
+  border-radius: 14px;
+  padding: var(--space-5);
+  box-shadow: var(--shadow-1);
+}
+.card + .card{ margin-top: var(--space-4); }
+
+.card-head{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.card-head h3{ margin: 0; }
+.meta{ color: var(--muted); font-size: 0.92rem; }
+
+/* Project cards grid (if you later want multi-column) */
+/* .project-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap: var(--space-4); } */
+
+/* Footer */
+.site-footer{
+  padding: var(--space-6) 0;
+  color: var(--muted);
+  border-top: 1px solid #e6eeec;
+  background: #fff;
+}
+
+/* Contact list */
+.contact-list{ list-style: none; padding: 0; margin: 0; }
+.contact-list li{ margin-bottom: var(--space-2); }
+
+/* ====== Responsive ====== */
+@media (max-width: 900px){
+  .nav-links{ gap: var(--space-3); }
+  .about-flex{ flex-direction: column; }
+  .about-photo{
+    width: 95vw;
+    max-width: 430px;
+    margin: 0 auto;
+    display: block;
+  }
+  .card-head{ flex-direction: column; align-items: flex-start; gap: 4px; }
+  h1{ font-size: 2.4rem; }
+}
+
+@media (max-width: 600px){
+  .hero-inner{ padding: var(--space-6) 0; }
+  .header-content{ padding: var(--space-4) var(--space-5); }
+}
+
+/* ===== RETRO THEME OVERRIDES (keep at end of file) ===== */
+
+/* Chunkier type for headings */
+h1, h2, h3 {
+  font-weight: 800;
+  letter-spacing: .3px;
+  text-shadow: 0.5px 0.5px 0 rgba(0,0,0,0.08);
+}
+
+/* Sticky nav: thick outline + offset shadow + retro underline for active */
+.site-nav{
+  border: 3px solid var(--ink);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.18);
+}
+.nav-link{
+  position: relative;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+.nav-link::after{
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -8px;
+  height: 6px;
+  border-radius: 6px;
+  transform: translateY(2px);
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after{
+  background: var(--chip);
+  border: 2px solid var(--brand-2);
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.15);
+  opacity: 1;
+}
+
+/* Hero card gets a chunky frame + offset shadow */
+.header-content{
+  border: 3px solid var(--ink);
+  box-shadow: 8px 8px 0 rgba(0,0,0,0.18);
+}
+
+/* Alternating section backgrounds for that poster-board feel */
+section:nth-of-type(even){
+  background: #e9f5f1;
+  border-top: 3px solid #cfece4;
+  border-bottom: 3px solid #cfece4;
+}
+
+/* Cards → heavy borders + offset shadows */
+.card{
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: 8px 8px 0 rgba(0,0,0,0.16);
+}
+
+/* Chips → retro badges */
+.chip{
+  border: 2px solid var(--brand-2);
+  background: var(--chip);
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.12);
+  font-weight: 700;
+}
+
+/* About photo → polaroid edge + tilt on hover */
+.about-photo{
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: 10px 10px 0 rgba(10,79,69,0.25);
+  max-width: 520px;
+}
+.about-photo:hover{
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: 14px 14px 0 rgba(10,79,69,0.28);
+}
+
+/* Project meta line a touch bolder */
+.meta{ font-weight: 700; }
+
+/* Tighten container rhythm a bit for the poster look */
+section{ padding: var(--space-6) 0; }
+
+/* Responsive: keep the retro borders but relax sizes */
+@media (max-width: 900px){
+  .site-nav{ border-width: 2px; box-shadow: 4px 4px 0 rgba(0,0,0,0.16); }
+  .card{ border-width: 2px; box-shadow: 6px 6px 0 rgba(0,0,0,0.14); }
+  .about-photo{ max-width: 430px; }
+}
+
+/* ---- Project actions ---- */
+.project-actions{
+  margin: 12px 0 18px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Buttons (retro-friendly) */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .08s ease, box-shadow .12s ease, background .2s;
+}
+.btn:active{ transform: translateY(1px); }
+
+.btn-primary{
+  background: var(--brand-2);
+  color: #fff;
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 rgba(0,0,0,.16);
+}
+.btn-primary:hover{ background: #0a5f53; }
+
+
+.btn-ghost{
+  background: var(--chip);
+  color: var(--brand-2);
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 rgba(0,0,0,.16);
+}
+
+/* Make <summary> look like our button */
+.details summary{ list-style: none; }
+.details summary::-webkit-details-marker{ display: none; }
+
+/* ---- Gallery ---- */
+.gallery{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.gallery figure{
+  margin: 0;
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 8px 8px 0 rgba(0,0,0,.16);
+  overflow: hidden;
+}
+.gallery img{
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+.gallery figcaption{
+  font-size: .92rem;
+  padding: 8px 10px;
+  background: #f7fbfa;
+  border-top: 1px solid #e6eeec;
+}
+
+/* ---- Explainer box ---- */
+.project-explainer{
+  margin-top: 16px;
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 8px 8px 0 rgba(0,0,0,.16);
+  padding: 16px 18px;
+}
+
+/* ---- Lightbox ---- */
+.lightbox[hidden]{ display: none; }
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  padding: 24px;
+}
+.lightbox img{
+  max-width: 90vw;
+  max-height: 80vh;
+  border: 4px solid #fff;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+.lightbox-close{
+  position: absolute;
+  top: 16px; right: 20px;
+  font-size: 28px;
+  line-height: 1;
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  box-shadow: 6px 6px 0 rgba(0,0,0,.16);
+}
+.lightbox-caption{
+  color: #e6fffa;
+  margin-top: 10px;
+  max-width: 90vw;
+  text-align: center;
+}
+
+/* Responsive tweaks for gallery */
+@media (max-width: 900px){
+  .gallery{ grid-template-columns: 1fr; }
+  .gallery img{ height: 240px; }
+}
+
+/* ===== Carousel (CineSync demos) ===== */
+.carousel{
+  position: relative;
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: 8px 8px 0 rgba(0,0,0,.16);
+  background: #fff;
+  overflow: hidden;
+  margin-top: 14px;
+}
+.carousel-track{
+  display: flex;
+  transition: transform .45s ease;
+  will-change: transform;
+  align-items: center;
+}
+.slide{
+  min-width: 100%;
+  display: grid;
+  grid-template-rows: auto auto;
+  background: #000;
+}
+.slide img{
+  width: 100%;
+  height: clamp(260px, 48vw, 520px);
+  object-fit: contain;
+  background: #000;
+  display: block;
+}
+.slide figcaption{
+  padding: 10px 14px;
+  background: #f7fbfa;
+  border-top: 1px solid #e6eeec;
+  font-size: .95rem;
+}
+
+/* arrows */
+.carousel-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 3px solid var(--ink);
+  background: var(--chip);
+  box-shadow: 6px 6px 0 rgba(0,0,0,.16);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+.carousel-btn.prev{ left: 10px; }
+.carousel-btn.next{ right: 10px; }
+
+/* dots */
+.carousel-dots{
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  bottom: 10px;
+  display: flex; gap: 8px;
+}
+.carousel-dots button{
+  width: 10px; height: 10px; border-radius: 999px;
+  border: 2px solid var(--ink);
+  background: #fff;
+  opacity: .6;
+}
+.carousel-dots button[aria-current="true"]{
+  background: var(--brand-2);
+  opacity: 1;
+}
+
+/* Lightbox smooth open/close animation */
+@media (prefers-reduced-motion: no-preference){
+  .lightbox{
+    opacity: 0;
+    transform: scale(1.02);
+    transition: opacity .28s ease, transform .28s ease;
+  }
+  .lightbox.open{
+    opacity: 1;
+    transform: scale(1);
+  }
+  .lightbox img{
+    transform: scale(.985);
+    opacity: 0;
+    transition: transform .35s ease, opacity .35s ease;
+  }
+  .lightbox.open img{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Optional: subtle hover zoom for gallery tiles */
+@media (prefers-reduced-motion: no-preference){
+  .gallery img{ transition: transform .25s ease; }
+  .gallery img:hover{ transform: scale(1.02); }
+}
+
+
+
+/* ===== 3D Cover Flow Effect ===== */
+.carousel-track {
+  display: flex;
+  justify-content: center;
+  perspective: 1200px;
+  transition: transform 0.7s ease;
+}
+
+.slide {
+  flex: 0 0 60%;                /* center slide size */
+  margin: 0 20px;
+  transform: scale(0.75) rotateY(25deg);
+  opacity: 0.5;
+  transition: all 0.7s ease;
+  z-index: 0;
+}
+
+.slide.is-active {
+  transform: scale(1) rotateY(0deg);
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #000;
+}
+.simple-carousel{
+  position: relative;
+  max-width: 720px;        /* good width for phone screenshots */
+  margin: 16px auto;
+  text-align: center;
+}
+.simple-track img{
+  display: none;           /* show one at a time */
+  width: 100%;
+  height: auto;            /* preserve aspect */
+  background: #000;        /* clean letterbox around tall images */
+  border-radius: 10px;
+}
+.simple-track img.active{ display: block; }
+
+.simple-prev,
+.simple-next{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 10px;
+  cursor: pointer;
+  line-height: 1;
+}
+.simple-prev{ left: 8px; }
+.simple-next{ right: 8px; }
+
+@media (max-width: 520px){
+  .simple-carousel{ max-width: 92vw; }
+}
+
+@media (min-width: 1000px){
+  .simple-carousel{ max-width: 840px; }
+}
+
+
+
+/* Scope 3D coverflow to carousels that explicitly opt in */
+.carousel:not(.coverflow) .carousel-track{ perspective: none; }
+.carousel:not(.coverflow) .slide{ transform: none; opacity: 1; }
+
+/* Optional: if you later want 3D, just add class="carousel coverflow" to that block */
+.coverflow .carousel-track{
+  perspective: 1200px;
+}
+.coverflow .slide{
+  transform: scale(0.75) rotateY(25deg);
+  opacity: 0.5;
+}
+.coverflow .slide.is-active{
+  transform: scale(1) rotateY(0deg);
+  opacity: 1;
+  z-index: 2;
+}
+
+/* ==== CineSync: make 'Our Goals' image full-width, centered, responsive ==== */
+#project-cinesync .gallery { 
+  grid-template-columns: 1fr;            /* single column so it's not squished */
+}
+
+#project-cinesync .gallery .goals-img { 
+  grid-column: 1 / -1;                   /* span full grid */
+  justify-self: center;                  /* center the figure */
+  max-width: 720px;                      /* match slideshow width */
+  margin: 0 auto;
+}
+
+#project-cinesync .gallery .goals-img img {
+  width: 100%;
+  height: auto;                          /* keep aspect ratio */
+  object-fit: contain;                   /* show the whole image */
+}
+
+@media (min-width: 1000px){
+  #project-cinesync .gallery .goals-img { max-width: 840px; } /* desktop bump */
+}
+
+
+/* --- CineSync: make the 'Our Goals' image behave like the slideshow --- */
+#project-cinesync .gallery {
+  grid-template-columns: 1fr;        /* stop the 2-col squeeze */
+}
+
+/* Center figures and match slideshow width */
+#project-cinesync .gallery figure {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 720px;                  /* same as .simple-carousel */
+  margin: 0 auto;
+}
+
+/* Let CineSync gallery images grow naturally (no fixed 210px) */
+#project-cinesync .gallery img {
+  width: 100%;
+  height: auto !important;           /* override global 210px */
+  object-fit: contain;               /* show full image */
+}
+
+/* desktop bump to match carousel’s larger width */
+@media (min-width: 1000px){
+  #project-cinesync .gallery figure { max-width: 840px; }
+}
+
+/* small spacing so the gallery doesn't look stuck to the carousel */
+#project-cinesync .simple-carousel { margin-bottom: 16px; }
+
+
+/* ---- CineSync: Tech Details (collapsible) ---- */
+#project-cinesync .tech-details{ margin-top: 18px; }
+
+/* Make the summary button feel clickable and retro */
+#project-cinesync .tech-details > summary.btn{
+  position: relative;
+  padding-right: 55px; /* room for caret */
+}
+#project-cinesync .tech-details > summary.btn::after{
+  content: "›";
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%) rotate(90deg);
+  width: 26px; height: 26px; line-height: 26px; text-align: center;
+  border: 3px solid var(--ink); border-radius: 8px; background: #fff; font-weight: 900;
+  box-shadow: var(--retro-shadow-details); /* uses details-only shadow */
+}
+#project-cinesync .tech-details[open] > summary.btn::after{ transform: translateY(-50%) rotate(270deg); }
+
+/* Two-column layout for feature cards (falls back to one on small screens) */
+#project-cinesync .patterns-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+@media (max-width: 900px){
+  #project-cinesync .patterns-grid{ grid-template-columns: 1fr; }
+}
+
+/* Info cards: retro paper vibe */
+#project-cinesync .info-card{
+  background:
+    repeating-linear-gradient(135deg, #ffffff, #ffffff 12px, #f6fffb 12px, #f6fffb 24px);
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 8px 8px 0 rgba(0,0,0,.16);
+  padding: 14px 16px;
+}
+#project-cinesync .info-card h4{
+  margin: 0 0 8px;
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--chip);
+  border: 2px solid var(--brand-2);
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0,0,0,.12);
+}
+
+/* Bullets → friendly checks */
+#project-cinesync .bullets{ list-style: none; margin: 0; padding-left: 0; }
+#project-cinesync .bullets li{
+  position: relative; padding-left: 28px; margin: 6px 0;
+}
+#project-cinesync .bullets li::before{
+  content: "✓"; font-weight: 800; color: var(--brand-2);
+  position: absolute; left: 0; top: 2px;
+  width: 20px; height: 20px; line-height: 18px; text-align: center;
+  background: #fff; border: 2px solid var(--ink); border-radius: 8px;
+  box-shadow: 2px 2px 0 rgba(0,0,0,.12);
+}
+
+/* Code blocks for snippets */
+#project-cinesync .codeblock{
+  background: #0f1b17;
+  color: #d8fff3;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 2px solid var(--ink);
+  overflow-x: auto;
+  box-shadow: 6px 6px 0 rgba(0,0,0,.16);
+}
+
+/* Steps → simple retro timeline */
+#project-cinesync .steps{ counter-reset: step; margin: 10px 0 0; padding-left: 0; list-style: none; }
+#project-cinesync .steps li{
+  counter-increment: step;
+  position: relative;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  padding: 10px 12px 10px 42px;
+  margin: 10px 0;
+  box-shadow: 6px 6px 0 rgba(0,0,0,.14);
+}
+#project-cinesync .steps li::before{
+  content: counter(step);
+  position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+  width: 24px; height: 24px; line-height: 22px; text-align: center;
+  background: var(--chip);
+  border: 2px solid var(--ink); border-radius: 8px;
+  font-weight: 900; color: var(--brand-2);
+}
+
+/* A little hover delight */
+@media (prefers-reduced-motion: no-preference){
+  #project-cinesync .info-card{ transition: transform .12s ease, box-shadow .2s ease; }
+  #project-cinesync .info-card:hover{ transform: translateY(-2px); box-shadow: 10px 10px 0 rgba(0,0,0,.18); }
+}
+
+/* === Global Retro Shadow Override (scoped by selectors) === */
+:root{ --retro-shadow: 6px 5px 0 rgba(0,0,0, 16); }
+
+/* Core frames */
+.site-nav,
+.header-content,
+.card,
+.gallery figure,
+.project-explainer,
+.carousel,
+.carousel-btn,
+.lightbox img,
+.lightbox-close,
+.about-photo,
+.chip,
+.btn-primary,
+.btn-ghost,
+#project-cinesync .info-card,
+#project-cinesync .codeblock,
+#project-cinesync .steps li{
+  box-shadow: var(--retro-shadow) !important;
+}
+
+/* Decorative elements that had their own shadows */
+.nav-link::after,
+#project-cinesync .tech-details > summary.btn::after{
+  box-shadow: var(--retro-shadow) !important;
+}
+
+/* Hover states should keep the same retro shadow */
+@media (prefers-reduced-motion: no-preference){
+  #project-cinesync .info-card:hover,
+  .btn-primary:hover,
+  .btn-ghost:hover{
+    box-shadow: var(--retro-shadow) !important;
+  }
+}
+:root{ --retro-shadow-inner: 6px 6px 0 rgba(0,0,0,.16); }
+
+/* Turn OFF retro shadow on big containers (keep frames clean) */
+.site-nav,
+.header-content,
+section,
+.card,
+.carousel,
+.lightbox img,
+.about-photo{
+  box-shadow: none !important;
+}
+
+:root{ /* nothing here, just to keep context for append */ }
+
+/* === Details toggle shadow: separately adjustable === */
+:root{
+  /* Configure ONLY the details caret shadow here */
+  --retro-shadow-details: 4px -3px 0 rgba(0,0,0,16);
+}
+
+/* Apply separate shadow just for the caret buttons in project details */
+#project-cinesync .tech-details > summary.btn::after,
+#project-campus-parking .project-details > summary.btn::after{
+  box-shadow: var(--retro-shadow-details) !important;
+}
+
+/* ===== Campus Parking: make it match CineSync retro vibe (scoped) ===== */
+#project-campus-parking .project-intro,
+#project-campus-parking .project-tech{
+  background:
+    repeating-linear-gradient(135deg, #ffffff, #ffffff 12px, #f6fffb 12px, #f6fffb 24px);
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: var(--retro-shadow-inner, 6px 6px 0 rgba(0,0,0,16));
+  margin-bottom: 12px;
+}
+#project-campus-parking .project-intro h4,
+#project-campus-parking .project-tech h4{
+  margin: 0 0 8px;
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--chip);
+  border: 2px solid var(--brand-2);
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0,0,0,12);
+}
+#project-campus-parking .project-tech .bullets{ list-style: none; margin: 0; padding-left: 0; }
+#project-campus-parking .project-tech .bullets li{
+  position: relative; padding-left: 28px; margin: 6px 0;
+}
+#project-campus-parking .project-tech .bullets li::before{
+  content: "✓"; font-weight: 800; color: var(--brand-2);
+  position: absolute; left: 0; top: 2px;
+  width: 20px; height: 20px; line-height: 18px; text-align: center;
+  background: #fff; border: 2px solid var(--ink); border-radius: 8px;
+  box-shadow: 2px 2px 0 rgba(0,0,0,12);
+}
+
+/* Featured landing image (big, centered) */
+#project-campus-parking .featured-hero{
+  margin: 14px auto 16px;
+  max-width: 840px; /* align with CineSync large width */
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--retro-shadow-inner, 6px 6px 0 rgba(0,0,0,16));
+}
+#project-campus-parking .featured-hero img{
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+#project-campus-parking .featured-hero figcaption{
+  font-size: .95rem;
+  padding: 8px 10px;
+  background: #f7fbfa;
+  border-top: 1px solid #e6eeec;
+}
+
+/* Details summary button (match CineSync caret button) */
+#project-campus-parking .project-details > summary.btn{
+  position: relative;
+  padding-right: 55px;
+}
+#project-campus-parking .project-details > summary.btn::after{
+  content: "›";
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%) rotate(90deg);
+  width: 26px; height: 26px; line-height: 26px; text-align: center;
+  border: 3px solid var(--ink); border-radius: 8px; background: #fff; font-weight: 900;
+  box-shadow: var(--retro-shadow-inner, 6px 6px 0 rgba(0,0,0,16));
+}
+#project-campus-parking .project-details[open] > summary.btn::after{
+  transform: translateY(-50%) rotate(270deg);
+}
+
+/* Inside the details: keep gallery grid, but allow images to scale naturally */
+#project-campus-parking .project-details .gallery img{
+  height: auto;              /* override the global 210px in this section */
+  max-height: 420px;         /* reasonable cap for screenshots */
+  object-fit: contain;
+}
+
+/* Nudge spacing so blocks breathe like CineSync */
+#project-campus-parking .project-actions{ margin-top: 10px; }
+#project-campus-parking .project-summary{ margin: 8px 0 10px; }
+
+/* Responsive: shrink featured image gracefully */
+@media (max-width: 1000px){
+  #project-campus-parking .featured-hero{ max-width: 92vw; }
+}
+:root{ /* nothing here, just to keep context for append */ }
+
+
+/* === Unified Retro Shadow Overrides for Project Sections === */
+/* Inner elements across projects (CineSync + Campus Parking) */
+#project-cinesync .info-card,
+#project-cinesync .codeblock,
+#project-cinesync .steps li,
+#project-cinesync .gallery figure,
+#project-cinesync .project-explainer,
+#project-cinesync .project-details > summary.btn::after,
+#project-campus-parking .project-intro,
+#project-campus-parking .project-tech,
+#project-campus-parking .featured-hero,
+#project-campus-parking .gallery figure,
+#project-campus-parking .project-explainer,
+/* #project-campus-parking .project-details > summary.btn::after {
+  box-shadow: var(--retro-shadow-inner) !important;
+} */
+
+/* Ensure outer cards/containers remain clean */
+#project-cinesync.card,
+#project-cinesync .carousel,
+#project-campus-parking.card,
+#project-campus-parking .carousel {
+  box-shadow: none !important;
+}
