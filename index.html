@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Villalon | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Sticky site nav -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">Daniel Villalon</a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Work Experience</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#activities" class="nav-link">Extra Activities</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero / Header -->
+  <header id="top" class="hero">
+    <!-- Header background is set with CSS using photos/ireland_pic1.jpg and a green overlay -->
+    <div class="container hero-inner">
+      <div class="header-content">
+        <h1>Daniel Villalon</h1>
+        <p>San Luis Obispo, CA</p>
+        <p>B.A. Computer Science | University of California, Santa Cruz</p>
+        <p class="header-links">
+          <a href="mailto:dannyvillalon2003@gmail.com">dannyvillalon2003@gmail.com</a>
+          <span class="sep">•</span>
+          <a href="https://linkedin.com/in/danielvillalon17" class="projRedirect"  target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <h2>About</h2>
+        <div class="about-flex">
+          <img src="photos/aboutme.jpeg" alt="Daniel in Santa Cruz" class="about-photo" />
+          <div class="about-text">
+            Hi, I'm Daniel, a Computer Science student at UC Santa Cruz. My focus areas include software engineering,
+            project management, and leveraging technology for positive social and environmental impact. I enjoy
+            collaborating on full-stack projects, exploring AI, and always aim to create tech that's practical and meaningful.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <div class="container">
+        <h2>Education</h2>
+        <p><strong>B.A. Computer Science</strong>, University of California, Santa Cruz</p>
+
+        <h3>Relevant Coursework</h3>
+        <ul class="course-list">
+          <li class="course-item chip" data-course="data-structures">Data Structures & Algorithms</li>
+          <div id="data-structures" class="course-description">
+            Core algorithms, data organization (arrays, lists, trees, graphs), problem-solving, and performance optimization.
+            Helped me build a strong foundation for interviews and efficient project code.
+          </div>
+
+          <li class="course-item chip" data-course="database-systems">Database Systems</li>
+          <div id="database-systems" class="course-description">
+            Theory and application of relational databases; schema design, SQL queries, and performance tuning.
+          </div>
+
+          <li class="course-item chip" data-course="system-design">Principles of System Design</li>
+          <div id="system-design" class="course-description">
+            Scalable architecture, modular design, and reliability practices for real-world software systems.
+          </div>
+
+          <li class="course-item chip" data-course="data-analytics">Data Analytics / Data Science</li>
+          <div id="data-analytics" class="course-description">
+            Data analysis with Python & pandas, visualization, and statistics to inform decisions.
+          </div>
+
+          <li class="course-item chip" data-course="full-stack">Full Stack Web Development</li>
+          <div id="full-stack" class="course-description">
+            React/Next.js, Node.js/Express, PostgreSQL; deployment, security, and testing end-to-end.
+          </div>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+
+        <!-- Project Card -->
+        <article class="card project-card" id="project-campus-parking">
+    <div class="card-head">
+      <h3>Campus Parking Platform</h3>
+      <span class="meta">Full Stack Web Dev Project • Jan – Jun 2025</span>
+    </div>
+
+    <section class="info-card project-intro">
+      <h4>Why we built it</h4>
+      <p>
+        Finding campus parking is frustrating: scattered rules, unclear permit limits, and no single place to see what’s allowed.
+        Our platform makes it simple—one app to buy permits, pay tickets, and see your status in real time. For admins, it’s
+        the control center they’ve always wanted: set limits, override prices, and manage accounts with confidence.
+      </p>
+    </section>
+
+    <figure class="featured-hero">
+      <img src="photos/homescreen-sammyParks.jpg" alt="Campus Parking Platform landing page" />
+      <figcaption>Landing — clear pre‑login actions (register vehicle, purchase permit, or sign in).</figcaption>
+    </figure>
+
+    <section class="info-card project-tech">
+      <h4>Tech Overview</h4>
+      <ul class="bullets">
+        <li><strong>Frontend:</strong> Next.js + TypeScript</li>
+        <li><strong>APIs:</strong> Express (REST), JWT auth, Google OAuth</li>
+        <li><strong>Data:</strong> PostgreSQL (permits, tickets, accounts)</li>
+        <li><strong>Payments:</strong> Stripe Checkout + webhooks</li>
+        <li><strong>Infra:</strong> Docker containers behind NGINX (SSL) on AWS EC2</li>
+        <li><strong>Quality:</strong> TDD with Vitest, Supertest, and React Testing Library</li>
+      </ul>
+    </section>
+
+    <div class="chips">
+      <span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Express</span>
+      <span class="chip">PostgreSQL</span><span class="chip">Docker</span><span class="chip">NGINX</span>
+      <span class="chip">Stripe API</span><span class="chip">AWS EC2</span><span class="chip">REST APIs</span>
+      <span class="chip">JWT</span><span class="chip">OAuth (Google)</span><span class="chip">TDD</span>
+    </div>
+
+    <div class="project-actions" style="display:flex; justify-content:flex-end;">
+      <a class="btn btn-primary projRedirect" href="https://sammyparks.com" target="_blank" rel="noopener">Live Demo</a>
+    </div>
+
+    <details class="details project-details">
+      <summary class="btn btn-ghost">More details + screenshots</summary>
+
+      <p class="project-summary">
+        Worked on a 5-person Agile team to develop a full-stack parking management system using a microservices
+        architecture (Admin, Enforcement, Driver) built with Next.js, Express, and PostgreSQL. Built real-time dashboards for drivers/admins with permit tracking,
+        ticketing, and Stripe payments. Deployed on AWS EC2 with Docker, SSL, and NGINX. Practiced TDD (Vitest, Supertest,
+        React Testing Library). Auth with JWT and Google OAuth. Collaborated via sprints, code reviews, and daily standups for on-time delivery.
+      </p>
+
+      <div class="gallery">
+        <figure>
+          <img src="photos/homescreen-sammyParks.jpg" alt="Landing page with pre-login routes" />
+          <figcaption><strong>Landing:</strong> pre-login routes for registering vehicles, purchasing permits, and login/signup.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="photos/login-page-driver.jpg" alt="Driver login with email/password and Google OAuth" />
+          <figcaption><strong>Login:</strong> email/password with JWT-based auth + Google OAuth option.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="photos/trying-to-buy-permit-prestripe.jpg" alt="Buy permit modal before payment" />
+          <figcaption><strong>Buy Permit:</strong> driver selects permit type/zone/vehicle; price is calculated before checkout.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="photos/stripe payment sp.jpg" alt="Stripe payment checkout screen" />
+          <figcaption><strong>Payment:</strong> Stripe Checkout (Stripe API) handles cards + Link for secure payments.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="photos/admin-driveAccounts.jpg" alt="Admin app driver accounts list with suspend buttons" />
+          <figcaption><strong>Admin – Accounts:</strong> view all users, set <em>active/suspended</em>; updates propagate via service APIs.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="photos/admin-set-parkingsAmount.jpg" alt="Admin app adjusting permit limits and overrides" />
+          <figcaption><strong>Admin – Limits & Overrides:</strong> configure per-zone permit caps and ticket/price overrides.</figcaption>
+        </figure>
+      </div>
+
+      <div class="project-explainer">
+        <h4>How it works (short & clear)</h4>
+        <ul>
+          <li><strong>Architecture:</strong> three microservices (Driver, Enforcement, Admin), each in its own Docker container with separate environment. NGINX reverse-proxy in front; services communicate via REST.</li>
+          <li><strong>Auth:</strong> email/password uses <em>JWT</em> (http-only cookie) for session; Google <em>OAuth</em> provides SSO. Protected routes verify tokens server-side.</li>
+          <li><strong>Permits/Tickets:</strong> Admin sets zone limits & pricing. Driver requests a permit → server validates availability & price → creates a pending order.</li>
+          <li><strong>Payments:</strong> server creates a Stripe Checkout Session; user pays on Stripe; webhook confirms payment and activates the permit.</li>
+          <li><strong>Admin Control:</strong> Admin UI lists all accounts; can suspend/enable users and override pricing/limits. Changes persist in PostgreSQL and show up via service APIs.</li>
+          <li><strong>Testing/Quality:</strong> TDD with Vitest/Supertest/RTL; type-safe endpoints with TypeScript.</li>
+          <li><strong>Deploy:</strong> Dockerized services on AWS EC2; NGINX handles SSL/HTTP2 and routes to containers.</li>
+        </ul>
+      </div>
+    </details>
+  </article>
+
+        <article class="card project-card" id="project-cinesync">
+          
+          <div class="card-head">
+            <h3>CineSync Movie App</h3>
+            <span class="meta">Software Engineering Project • Jan – Jun 2025</span>
+          </div>
+          <p>
+            Mobile app for group movie nights. Built a real-time, multi-user workflow with auth, groups, invites,
+            and shared watchlists. Emphasis on state consistency and UX polish.
+          </p>
+
+          <div class="chips">
+            <span class="chip">React Native</span><span class="chip">Expo</span>
+            <span class="chip">Firebase (Auth/Store)</span><span class="chip">Realtime</span>
+            <span class="chip">Design Systems</span><span class="chip">Agile</span>
+          </div>
+
+          <!-- DEMO SIMPLE CAROUSEL -->
+          <div class="simple-carousel" aria-label="CineSync Demo">
+            <button class="simple-prev">‹</button>
+            <div class="simple-track">
+              <img src="photos/cinecync/Screenshot 2025-08-28 at 5.18.13 PM.png" alt="Login/Sign up demo" class="active">
+              <img src="photos/cinecync/Screenshot 2025-08-28 at 5.18.18 PM.png" alt="View/Add Groups demo">
+              <img src="photos/cinecync/Screenshot 2025-08-28 at 5.18.23 PM.png" alt="Homescreen dropdown demo">
+              <img src="photos/cinecync/Screenshot 2025-08-28 at 5.18.28 PM.png" alt="Invite/Edit Group demo">
+              <img src="photos/cinecync/Screenshot 2025-08-28 at 5.18.45 PM.png" alt="Search/Add Movie demo">
+              <img src="photos/cinecync/Screenshot 2025-08-28 at 5.19.01 PM.png" alt="Sort demo">
+              <img src="photos/cinecync/Screenshot 2025-08-28 at 5.19.11 PM.png" alt="Filter by genre demo">
+            </div>
+            <button class="simple-next">›</button>
+          </div>
+
+          <!-- NON-DEMO IMAGES (like the goals slide) — same gallery style as Parking project -->
+          <div class="gallery" style="margin-top:16px">
+            <figure>
+              <img src="photos/cinecync/Screenshot 2025-08-28 at 5.19.30 PM.png" />
+              <figcaption></figcaption>
+            </figure>
+          </div>
+        <!-- ===== CineSync: App Directory Structure & Patterns ===== -->
+<details class="details tech-details" open>
+  <summary class="btn btn-ghost">Core Features &amp; How It Works</summary>
+
+  <div class="patterns-grid">
+    <!-- Auth & Sessions -->
+    <section class="info-card">
+      <h4>Sign‑in & Sessions</h4>
+      <ul class="bullets">
+        <li><strong>What it does:</strong> Email/password and “Continue with Google.” Sessions stay signed‑in across app restarts.</li>
+        <li><strong>How it works:</strong> Firebase Auth issues an ID token; we refresh it automatically and read simple role claims (owner/mod/member).</li>
+        <li><strong>Why this matters:</strong> Low friction for users, and predictable permissions for the app.</li>
+      </ul>
+    </section>
+
+    <!-- Groups, Roles, Rules -->
+    <section class="info-card">
+      <h4>Groups & Access</h4>
+      <ul class="bullets">
+        <li><strong>What it does:</strong> Users create or join groups to plan movie nights together.</li>
+        <li><strong>How it works:</strong> Each group has members with roles. Firebase Security Rules allow only members to change group data; owners can toggle fairness or manage members.</li>
+        <li><strong>Why this matters:</strong> Permissions are enforced server‑side, so UI mistakes don’t become security issues.</li>
+      </ul>
+    </section>
+
+    <!-- Invites -->
+    <section class="info-card">
+      <h4>Invites & Onboarding</h4>
+      <ul class="bullets">
+        <li><strong>What it does:</strong> Invite friends by email; they can accept or decline. Pending invites show up as a small badge.</li>
+        <li><strong>How it works:</strong> An invite document is created; when it’s accepted we add the member to the group and bump a lightweight counter that drives the badge.</li>
+        <li><strong>Why this matters:</strong> Onboarding is reliable and the badge updates instantly without heavy reads.</li>
+      </ul>
+    </section>
+
+    <!-- Watchlist & Voting -->
+    <section class="info-card">
+      <h4>Watchlist, Voting & Fairness</h4>
+      <ul class="bullets">
+        <li><strong>What it does:</strong> Add movies to a shared watchlist, like them, mark them as watched, and optionally enable a fairness toggle so picks don’t get dominated by one person.</li>
+        <li><strong>How it works:</strong> Actions update the UI immediately (optimistic UI). If the write fails, the last confirmed state is restored from the live listener.</li>
+        <li><strong>Why this matters:</strong> The app feels instant but stays correct even on flaky networks.</li>
+      </ul>
+    </section>
+
+    <!-- Search & Add -->
+    <section class="info-card">
+      <h4>Search & Add to Group</h4>
+      <ul class="bullets">
+        <li><strong>What it does:</strong> Search a movie catalog and add a title to your group’s list.</li>
+        <li><strong>How it works:</strong> When you pick a result, we save one <em>canonical</em> movie record (title, year, IDs) and then link it into your group’s watchlist. The same film can appear in many groups without creating duplicates.</li>
+        <li><strong>Why this matters:</strong> Clean data (no duplicates) and faster queries later (one source of truth).</li>
+      </ul>
+    </section>
+
+    <!-- Sort & Filter -->
+    <section class="info-card">
+      <h4>Sorting & Filtering</h4>
+      <ul class="bullets">
+        <li><strong>What it does:</strong> Order by likes or Rotten Tomatoes score; filter by genre.</li>
+        <li><strong>How it works:</strong> We keep a small client‑side index to combine signals without expensive multi‑field queries. Results are memoized so scrolling stays smooth.</li>
+      </ul>
+    </section>
+
+    <!-- Realtime & Consistency -->
+    <section class="info-card">
+      <h4>Realtime Experience</h4>
+      <ul class="bullets">
+        <li><strong>What it does:</strong> Everyone sees changes as they happen—new movies, likes, invite counts.</li>
+        <li><strong>How it works:</strong> Live listeners stream updates to the screen. We preserve scroll position and resync after reconnecting.</li>
+      </ul>
+    </section>
+
+    <!-- Reliability & Shipping -->
+    <section class="info-card">
+      <h4>Reliability & Shipping</h4>
+      <ul class="bullets">
+        <li><strong>What it does:</strong> Keeps critical flows stable as features ship.</li>
+        <li><strong>How it works:</strong> Component/integration tests cover invites, watchlist actions, and fairness. Releases go out with Expo EAS channels so we can stage changes.</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- One concrete flow to make the approach tangible -->
+  <section class="info-card" style="margin-top:14px">
+    <h4>Example: Add a Movie → Visible to the Group</h4>
+    <ol class="steps">
+      <li><strong>Search</strong> returns results from the external API.</li>
+      <li><strong>Select</strong> saves one canonical movie record and links it to your group’s watchlist, so the same title isn’t duplicated across groups.</li>
+      <li><strong>Instant feedback</strong>: the movie appears immediately; if the server rejects the change we revert to the last confirmed state.</li>
+      <li><strong>Realtime</strong>: everyone in the group sees the update without refreshing, and badges update via a lightweight counter.</li>
+    </ol>
+  </section>
+</details>
+        </article>
+
+        <article class="card project-card">
+          <div class="card-head">
+            <h3>Generative AI – Six Hats</h3>
+            <span class="meta">Tech4Good Research Lab • Jan – Jun 2024</span>
+          </div>
+          <p>
+            Used OpenAI API to generate six complementary personas that improve group brainstorming and decision-making.
+            Focused on prompt engineering for clarity and fairness.
+          </p>
+          <div class="chips">
+            <span class="chip">OpenAI API</span><span class="chip">Prompting</span><span class="chip">Prototyping</span>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <div class="card-head">
+            <h3>U.S. Citizenship Learning Platform</h3>
+            <span class="meta">Full Stack Project • Jun – Jul 2023</span>
+          </div>
+          <p>
+            Full-stack study app with gamified quizzes and progress tracking to help users prepare for the U.S. citizenship test.
+          </p>
+          <div class="chips">
+            <span class="chip">React</span><span class="chip">Node.js</span><span class="chip">PostgreSQL</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="container">
+        <h2>Work Experience</h2>
+
+        <!-- New entries you want to add -->
+        <article class="card">
+          <div class="card-head">
+            <h3>Store Merchandising Associate</h3>
+            <span class="meta">Kohl’s • June 2024 – September 2024</span>
+          </div>
+          <ul>
+            <li>Reorganized merchandise displays and followed store planograms to improve layout clarity and enhance the shopping experience.</li>
+            <li>Communicated with team leads and inventory staff to identify restock priorities and reduce misplaced or misfiled items.</li>
+            <li>Assisted customers in locating items and resolving concerns, ensuring store sections remained orderly and accessible.</li>
+          </ul>
+        </article>
+
+        <!-- Existing entry (keep this) -->
+        <article class="card">
+          <div class="card-head">
+            <h3>Competitive Sport Supervisor</h3>
+            <span class="meta">University of California, Santa Cruz • May 2022 – Nov 2023</span>
+          </div>
+          <ul>
+            <li>Organized and ran campus sports events, ensuring safety and schedule efficiency.</li>
+            <li>Trained and supported referees; handled disputes and resolved issues live.</li>
+            <li>Developed leadership and conflict resolution skills managing teams/events.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h3>Busser</h3>
+            <span class="meta">Cello Ristorante, Allegretto Vineyard Resort • June 2022 – September 2022</span>
+          </div>
+          <ul>
+            <li>Supported a luxury dining experience by maintaining pristine table settings and assisting staff during high-traffic hours.</li>
+            <li>Worked closely with servers and kitchen staff to ensure smooth food delivery and an upscale guest experience throughout service.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h3>Busser</h3>
+            <span class="meta">Steakhouse Grill • June 2021 – September 2021</span>
+          </div>
+          <ul>
+            <li>Maintained a clean and organized dining environment by promptly clearing and resetting tables in a fast-paced restaurant.</li>
+            <li>Assisted servers with timely food and beverage delivery, improving table turnover and maintaining strong team coordination.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h3>IT Assistant Intern</h3>
+            <span class="meta">Paso Robles School District • June 2021 – September 2021</span>
+          </div>
+          <ul>
+            <li>Prepared and maintained technology infrastructure across multiple campuses, ensuring classroom tech was functional and ready for the school year.</li>
+            <li>Resolved technical issues for staff and students, supporting daily instructional needs and minimizing disruptions caused by hardware or software problems.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+        <h2>Skills</h2>
+
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h3>Programming Languages</h3>
+            <div class="chips">
+              <span class="chip">Python</span><span class="chip">C/C++</span><span class="chip">TypeScript</span>
+              <span class="chip">JavaScript</span><span class="chip">SQL/PostgreSQL</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Frameworks & Libraries</h3>
+            <div class="chips">
+              <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">React Native</span>
+              <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">Angular</span>
+              <span class="chip">Firebase</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Tools & Platforms</h3>
+            <div class="chips">
+              <span class="chip">GitHub</span><span class="chip">Vitest</span><span class="chip">Supertest</span>
+              <span class="chip">React Testing Library</span><span class="chip">TSOA</span><span class="chip">Jupyter</span>
+              <span class="chip">Visual Studio Code</span><span class="chip">AWS EC2</span><span class="chip">NGINX</span>
+              <span class="chip">JWT</span><span class="chip">REST APIs</span><span class="chip">TDD</span>
+              <span class="chip">CI/CD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities -->
+    <section id="activities">
+      <div class="container">
+        <h2>Activities</h2>
+        <article class="card">
+          <div class="card-head">
+            <h3>Conectado AI Bootcamp by Guillermo Diaz Jr</h3>
+            <span class="meta">Aug – Dec 2024</span>
+          </div>
+          <ul>
+            <li>Hands-on experience in AI & ML fundamentals.</li>
+            <li>Mentored by professionals in the tech industry.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h3>Ireland Study Abroad • Dingle, Ireland</h3>
+            <span class="meta">Jun – Jul 2023</span>
+          </div>
+          <ul>
+            <li>Created a podcast on Gaelic football and Irish culture.</li>
+            <li>Gained global perspective and storytelling experience.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <ul class="contact-list">
+          <li>Email: <a href="mailto:dannyvillalon2003@gmail.com">dannyvillalon2003@gmail.com</a></li>
+          <li>LinkedIn: <a href="https://linkedin.com/in/danielvillalon17" target="_blank" rel="noopener">danielvillalon17</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      &copy; 2025 Daniel Villalon. All rights reserved.
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" hidden>
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <img alt="" />
+    <p class="lightbox-caption"></p>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
