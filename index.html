@@ -334,18 +334,133 @@
 </details>
         </article>
 
-        <article class="card project-card">
+        <article class="card project-card" id="project-six-hats">
           <div class="card-head">
-            <h3>Generative AI – Six Hats</h3>
-            <span class="meta">Tech4Good Research Lab • Jan – Jun 2024</span>
+            <h3>Generative AI – Six Thinking Hats &amp; Clustering</h3>
+            <span class="meta">Full‑Stack AI/NLP Project</span>
           </div>
+
           <p>
-            Used OpenAI API to generate six complementary personas that improve group brainstorming and decision-making.
-            Focused on prompt engineering for clarity and fairness.
+            Two‑part project: a Flask web app that simulates Edward de Bono’s Six Thinking Hats with GPT‑3.5‑Turbo, and a set of ML/NLP
+            experiments that cluster and analyze real review text (TF‑IDF, KMeans, LSA, dual sentiment). Shows LLM prompt engineering and
+            practical pipelines working together—from interactive brainstorming to explainable clusters and visuals.
           </p>
+
           <div class="chips">
-            <span class="chip">OpenAI API</span><span class="chip">Prompting</span><span class="chip">Prototyping</span>
+            <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Flask‑Session</span>
+            <span class="chip">OpenAI (GPT‑3.5‑Turbo)</span><span class="chip">scikit‑learn</span><span class="chip">pandas</span>
+            <span class="chip">TextBlob</span><span class="chip">NLTK VADER</span><span class="chip">matplotlib</span>
+            <span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span>
           </div>
+
+          <details class="details tech-details">
+            <summary class="btn btn-ghost">Core Stack &amp; How It Works</summary>
+
+            <div class="patterns-grid">
+              <section class="info-card">
+                <h4>Languages</h4>
+                <ul class="bullets">
+                  <li>Python — backend + ML/NLP experiments</li>
+                  <li>JavaScript — frontend interactivity (fetch, DOM)</li>
+                  <li>HTML5 — static chat UI</li>
+                  <li>CSS3 — custom styling</li>
+                </ul>
+              </section>
+
+              <section class="info-card">
+                <h4>Backend</h4>
+                <ul class="bullets">
+                  <li>Flask — web server, routes, serves static assets</li>
+                  <li>Flask‑Session — server‑side sessions (filesystem store)</li>
+                  <li>OpenAI Python SDK — GPT‑3.5‑Turbo completions</li>
+                </ul>
+              </section>
+
+              <section class="info-card">
+                <h4>Frontend</h4>
+                <ul class="bullets">
+                  <li>Vanilla JS — Fetch API, DOM updates</li>
+                  <li>HTML — single‑page chat shell</li>
+                  <li>CSS — custom design (no frameworks)</li>
+                </ul>
+              </section>
+
+              <section class="info-card">
+                <h4>AI / LLM</h4>
+                <ul class="bullets">
+                  <li>GPT‑3.5‑Turbo — “Six Thinking Hats” multi‑agent prompts</li>
+                  <li>Prompt Engineering — roles: White, Red, Black, Yellow, Green, Blue</li>
+                  <li>Feedback loop — extra Black Hat critique to balance others</li>
+                </ul>
+              </section>
+
+              <section class="info-card">
+                <h4>NLP / ML Libraries</h4>
+                <ul class="bullets">
+                  <li>scikit‑learn — TF‑IDF, KMeans, TruncatedSVD (LSA), cosine similarity</li>
+                  <li>pandas — data wrangling, CSV I/O</li>
+                  <li>TextBlob — sentiment polarity (continuous)</li>
+                  <li>NLTK VADER — sentiment class (pos/neutral/neg)</li>
+                  <li>matplotlib — plots (clusters, sentiment charts)</li>
+                </ul>
+              </section>
+
+              <section class="info-card">
+                <h4>Algorithms &amp; Techniques</h4>
+                <ul class="bullets">
+                  <li>Vectorization — TF‑IDF (uni/bigrams)</li>
+                  <li>Dimensionality — TruncatedSVD → 2D LSA projection</li>
+                  <li>Clustering — KMeans (2 for polarity; 5 for topics)</li>
+                  <li>Similarity — cosine similarity inside clusters</li>
+                  <li>Sentiment — TextBlob + VADER dual approach</li>
+                  <li>Post‑processing — avg sentiment per cluster → relabel</li>
+                </ul>
+              </section>
+
+              <section class="info-card">
+                <h4>Data &amp; Outputs</h4>
+                <ul class="bullets">
+                  <li>CSV — input datasets (reviews) + labeled outputs</li>
+                  <li>PNG — clustering visuals, sentiment by cluster</li>
+                  <li>Static assets — frontend HTML, CSS, JS</li>
+                </ul>
+              </section>
+
+              <section class="info-card">
+                <h4>State &amp; Sessions</h4>
+                <ul class="bullets">
+                  <li>Filesystem session store — Flask‑Session keeps per‑user chat history</li>
+                </ul>
+              </section>
+
+              <section class="info-card">
+                <h4>Config &amp; Secrets</h4>
+                <ul class="bullets">
+                  <li>.env — stores OPENAI_API_KEY</li>
+                  <li>.gitignore — should ignore secrets + session data</li>
+                </ul>
+              </section>
+
+              <section class="info-card">
+                <h4>Dev &amp; Misc</h4>
+                <ul class="bullets">
+                  <li>Git — version control</li>
+                  <li>Paths — switch absolute → relative in ML scripts</li>
+                  <li>Flask dev server — debug=True during development</li>
+                </ul>
+              </section>
+            </div>
+
+            <div class="project-explainer">
+              <h4>Why it matters</h4>
+              <p>
+                I built a two‑part project that blends interactive brainstorming with traditional NLP/ML analysis. The Flask app simulates
+                Six Thinking Hats to generate balanced perspectives with an automatic Black Hat critique. In parallel, scikit‑learn pipelines
+                cluster reviews, reduce dimensions (LSA), compute cosine similarity, and measure sentiment with TextBlob + VADER. The result is
+                a practical system that pairs real‑time ideation with explainable, data‑driven insights.
+              </p>
+            </div>
+          </details>
         </article>
 
         <article class="card project-card">

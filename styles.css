@@ -727,6 +727,77 @@ section{ padding: var(--space-6) 0; }
   #project-cinesync .patterns-grid{ grid-template-columns: 1fr; }
 }
 
+/* ---- Six Hats: Tech Details (collapsible) ---- */
+#project-six-hats .tech-details{ margin-top: 18px; }
+
+/* Make the summary button feel clickable and retro */
+#project-six-hats .tech-details > summary.btn{
+  position: relative;
+  padding-right: 55px; /* room for caret */
+}
+#project-six-hats .tech-details > summary.btn::after{
+  content: "›";
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%) rotate(90deg);
+  width: 26px; height: 26px; line-height: 26px; text-align: center;
+  border: 3px solid var(--ink); border-radius: 8px; background: #fff; font-weight: 900;
+  box-shadow: var(--retro-shadow-details); /* uses details-only shadow */
+}
+#project-six-hats .tech-details[open] > summary.btn::after{ transform: translateY(-50%) rotate(270deg); }
+
+/* Two-column layout for feature cards (falls back to one on small screens) */
+#project-six-hats .patterns-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+@media (max-width: 900px){
+  #project-six-hats .patterns-grid{ grid-template-columns: 1fr; }
+}
+
+/* Info cards: retro paper vibe */
+#project-six-hats .info-card{
+  background:
+    repeating-linear-gradient(135deg, #ffffff, #ffffff 12px, #f6fffb 12px, #f6fffb 24px);
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 8px 8px 0 rgba(0,0,0,.16);
+  padding: 14px 16px;
+}
+#project-six-hats .info-card h4{
+  margin: 0 0 8px;
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--chip);
+  border: 2px solid var(--brand-2);
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0,0,0,.12);
+}
+
+/* Bullets → friendly checks */
+#project-six-hats .bullets{ list-style: none; margin: 0; padding-left: 0; }
+#project-six-hats .bullets li{
+  position: relative; padding-left: 28px; margin: 6px 0;
+}
+#project-six-hats .bullets li::before{
+  content: "✓"; font-weight: 800; color: var(--brand-2);
+  position: absolute; left: 0; top: 2px;
+  width: 20px; height: 20px; line-height: 18px; text-align: center;
+  background: #fff; border: 2px solid var(--ink); border-radius: 8px;
+  box-shadow: 2px 2px 0 rgba(0,0,0,.12);
+}
+
+/* Code blocks for snippets (optional) */
+#project-six-hats .codeblock{
+  background: #0f1b17;
+  color: #d8fff3;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 2px solid var(--ink);
+  overflow-x: auto;
+  box-shadow: 6px 6px 0 rgba(0,0,0,.16);
+}
+
 /* Info cards: retro paper vibe */
 #project-cinesync .info-card{
   background:
@@ -857,6 +928,7 @@ section,
 
 /* Apply separate shadow just for the caret buttons in project details */
 #project-cinesync .tech-details > summary.btn::after,
+#project-six-hats .tech-details > summary.btn::after,
 #project-campus-parking .project-details > summary.btn::after{
   box-shadow: var(--retro-shadow-details) !important;
 }
