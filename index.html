@@ -63,31 +63,144 @@
         <p><strong>B.A. Computer Science</strong>, University of California, Santa Cruz</p>
 
         <h3>Relevant Coursework</h3>
-        <ul class="course-list">
-          <li class="course-item chip" data-course="data-structures">Data Structures & Algorithms</li>
-          <div id="data-structures" class="course-description">
-            Core algorithms, data organization (arrays, lists, trees, graphs), problem-solving, and performance optimization.
-            Helped me build a strong foundation for interviews and efficient project code.
+        <ul class="course-list" aria-label="Core CS Courses">
+          <li class="course-item chip" data-course="prog-python" tabindex="0" aria-expanded="false" aria-controls="prog-python">Programming Abstractions in Python</li>
+          <div id="prog-python" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>Abstract data types (lists, sets, dicts), recursion, testing, asymptotic basics</li>
+              <li>Use: write clean, modular Python for prototyping and data processing</li>
+            </ul>
           </div>
 
-          <li class="course-item chip" data-course="database-systems">Database Systems</li>
-          <div id="database-systems" class="course-description">
-            Theory and application of relational databases; schema design, SQL queries, and performance tuning.
+          <li class="course-item chip" data-course="asm-systems" tabindex="0" aria-expanded="false" aria-controls="asm-systems">Computer Systems and Assembly Language</li>
+          <div id="asm-systems" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>Machine representation, assembly programming, stack frames, calling conventions, I/O</li>
+              <li>Use: debug low‑level issues and reason about performance/overflow</li>
+            </ul>
           </div>
 
-          <li class="course-item chip" data-course="system-design">Principles of System Design</li>
-          <div id="system-design" class="course-description">
-            Scalable architecture, modular design, and reliability practices for real-world software systems.
+          <li class="course-item chip" data-course="c-systems" tabindex="0" aria-expanded="false" aria-controls="c-systems">Computer Systems and C Programming</li>
+          <div id="c-systems" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>C programming: pointers, memory management, files/processes, build tools (make), debugging</li>
+              <li>Use: write efficient system‑level utilities on Unix‑like systems</li>
+            </ul>
           </div>
 
-          <li class="course-item chip" data-course="data-analytics">Data Analytics / Data Science</li>
-          <div id="data-analytics" class="course-description">
-            Data analysis with Python & pandas, visualization, and statistics to inform decisions.
+          <li class="course-item chip" data-course="discrete-math" tabindex="0" aria-expanded="false" aria-controls="discrete-math">Applied Discrete Mathematics</li>
+          <div id="discrete-math" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>Logic, sets, combinatorics, recurrences, graph theory, proof techniques</li>
+              <li>Use: analyze algorithms and prove correctness/complexity</li>
+            </ul>
           </div>
 
-          <li class="course-item chip" data-course="full-stack">Full Stack Web Development</li>
-          <div id="full-stack" class="course-description">
-            React/Next.js, Node.js/Express, PostgreSQL; deployment, security, and testing end-to-end.
+          <li class="course-item chip" data-course="architecture" tabindex="0" aria-expanded="false" aria-controls="architecture">Computer Architecture</li>
+          <div id="architecture" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>CPU organization, pipelining, caches/memory hierarchy, ISA and performance</li>
+              <li>Use: optimize data layout and understand parallelism bottlenecks</li>
+            </ul>
+          </div>
+
+          <li class="course-item chip" data-course="algorithms" tabindex="0" aria-expanded="false" aria-controls="algorithms">Data Structures & Algorithms</li>
+          <div id="algorithms" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>Asymptotic analysis; trees/graphs/heaps/hashing; sorting; greedy, divide‑and‑conquer, DP</li>
+              <li>Use: design efficient solutions and prepare for algorithmic interviews</li>
+            </ul>
+          </div>
+
+          <li class="course-item chip" data-course="ml-basics" tabindex="0" aria-expanded="false" aria-controls="ml-basics">Machine Learning Basics</li>
+          <div id="ml-basics" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>Supervised/unsupervised learning, regression/classification, evaluation, basic pipelines</li>
+              <li>Use: apply ML to small datasets and interpret results</li>
+            </ul>
+          </div>
+
+          <li class="course-item chip" data-course="systems-design" tabindex="0" aria-expanded="false" aria-controls="systems-design">Principles of Computer Systems Design</li>
+          <div id="systems-design" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>Abstractions for concurrency, communication, storage; reliability and fault‑tolerance</li>
+              <li>Use: design modular, scalable services and APIs</li>
+            </ul>
+          </div>
+
+          <li class="course-item chip" data-course="databases" tabindex="0" aria-expanded="false" aria-controls="databases">Database Systems I</li>
+          <div id="databases" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>Relational modeling, normalization, SQL, transactions, indexing, query planning</li>
+              <li>Use: design sound schemas and write performant queries</li>
+            </ul>
+          </div>
+
+          <li class="course-item chip" data-course="fswd1" tabindex="0" aria-expanded="false" aria-controls="fswd1">Full Stack Web Development I</li>
+          <div id="fswd1" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>React/Next.js, REST/GraphQL APIs, auth, state mgmt, testing basics</li>
+              <li>Use: ship an end‑to‑end CRUD app with CI hooks</li>
+            </ul>
+          </div>
+
+          <li class="course-item chip" data-course="fswd2" tabindex="0" aria-expanded="false" aria-controls="fswd2">Full Stack Web Development II</li>
+          <div id="fswd2" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>Scaling, CI/CD, observability, security hardening, perf tuning, cloud deploy</li>
+              <li>Use: productionize multi‑service apps and team workflows</li>
+            </ul>
+          </div>
+
+          <li class="course-item chip" data-course="software-eng" tabindex="0" aria-expanded="false" aria-controls="software-eng">Introduction to Software Engineering</li>
+          <div id="software-eng" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>Agile methods, requirements, design, version control, code reviews, testing</li>
+              <li>Use: deliver software in teams with repeatable quality</li>
+            </ul>
+          </div>
+        </ul>
+
+        <h3>Related Technical Courses</h3>
+        <ul class="course-list" aria-label="Related Technical Courses">
+          <li class="course-item chip" data-course="research-exp" tabindex="0" aria-expanded="false" aria-controls="research-exp">Research Experience in Engineering</li>
+          <div id="research-exp" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>Formulate hypotheses, run experiments, analyze and present results</li>
+              <li>Use: apply research methods to engineering problems</li>
+            </ul>
+          </div>
+
+          <li class="course-item chip" data-course="game-ai" tabindex="0" aria-expanded="false" aria-controls="game-ai">Game AI</li>
+          <div id="game-ai" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>Pathfinding (A*), decision‑making (FSM/BT), steering and utility AI</li>
+              <li>Use: build believable game agents and encounters</li>
+            </ul>
+          </div>
+
+          <li class="course-item chip" data-course="practical-prog" tabindex="0" aria-expanded="false" aria-controls="practical-prog">Practical Programming</li>
+          <div id="practical-prog" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>Python scripting, automation, data I/O, plotting, tooling best practices</li>
+              <li>Use: speed up analysis and everyday tasks</li>
+            </ul>
+          </div>
+
+          <li class="course-item chip" data-course="electronics" tabindex="0" aria-expanded="false" aria-controls="electronics">Engineering Principles of Electronics</li>
+          <div id="electronics" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>Circuits: Ohm’s law, op‑amps, filters, measurement and instrumentation</li>
+              <li>Use: interface sensors and reason about hardware constraints</li>
+            </ul>
+          </div>
+
+          <li class="course-item chip" data-course="math-methods" tabindex="0" aria-expanded="false" aria-controls="math-methods">Mathematical Methods for Scientists &amp; Engineers I</li>
+          <div id="math-methods" class="course-description" role="region" aria-hidden="true">
+            <ul>
+              <li>Linear algebra, differential equations, complex numbers and transforms</li>
+              <li>Use: modeling, numerical methods, ML foundations</li>
+            </ul>
           </div>
         </ul>
       </div>
@@ -123,8 +236,8 @@
       <h4>Tech Overview</h4>
       <ul class="bullets">
         <li><strong>Frontend:</strong> Next.js + TypeScript</li>
-        <li><strong>APIs:</strong> Express (REST), JWT auth, Google OAuth</li>
-        <li><strong>Data:</strong> PostgreSQL (permits, tickets, accounts)</li>
+        <li><strong>APIs:</strong> GraphQL + REST (type‑graphql, Express/tsoa); JWT + Google OAuth</li>
+        <li><strong>Data:</strong> PostgreSQL per domain with JSONB for flexible models</li>
         <li><strong>Payments:</strong> Stripe Checkout + webhooks</li>
         <li><strong>Infra:</strong> Docker containers behind NGINX (SSL) on AWS EC2</li>
         <li><strong>Quality:</strong> TDD with Vitest, Supertest, and React Testing Library</li>
@@ -133,9 +246,27 @@
 
     <div class="chips">
       <span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Express</span>
-      <span class="chip">PostgreSQL</span><span class="chip">Docker</span><span class="chip">NGINX</span>
-      <span class="chip">Stripe API</span><span class="chip">AWS EC2</span><span class="chip">REST APIs</span>
-      <span class="chip">JWT</span><span class="chip">OAuth (Google)</span><span class="chip">TDD</span>
+      <span class="chip">GraphQL</span><span class="chip">PostgreSQL</span>
+      <span class="chip">Docker</span><span class="chip">NGINX</span><span class="chip">AWS EC2</span>
+      <span class="chip">Stripe</span><span class="chip">Mailgun</span>
+      <span class="chip">REST</span><span class="chip">JWT</span><span class="chip">NextAuth</span>
+      <span class="chip">i18n</span><span class="chip">GitLab CI</span><span class="chip">TDD</span>
+    </div>
+
+    <!-- Quick highlights for recruiters -->
+    <div class="highlights" aria-label="Highlights">
+      <div class="highlight">
+        <strong>Multi‑service architecture</strong>
+        <span>GraphQL + REST across five services</span>
+      </div>
+      <div class="highlight">
+        <strong>Security &amp; scale</strong>
+        <span>JWT roles, NextAuth, API keys</span>
+      </div>
+      <div class="highlight">
+        <strong>Production DX</strong>
+        <span>Docker, GitLab CI, TDD, i18n</span>
+      </div>
     </div>
 
     <div class="project-actions" style="display:flex; justify-content:flex-end;">
@@ -146,13 +277,16 @@
       <summary class="btn btn-ghost">More details + screenshots</summary>
 
       <p class="project-summary">
-        Worked on a 5-person Agile team to develop a full-stack parking management system using a microservices
-        architecture (Admin, Enforcement, Driver) built with Next.js, Express, and PostgreSQL. Built real-time dashboards for drivers/admins with permit tracking,
-        ticketing, and Stripe payments. Deployed on AWS EC2 with Docker, SSL, and NGINX. Practiced TDD (Vitest, Supertest,
-        React Testing Library). Auth with JWT and Google OAuth. Collaborated via sprints, code reviews, and daily standups for on-time delivery.
+        Worked on a 5‑person Agile team to build a production‑style parking platform with a microservices backend (Auth, Permit, Vehicle, Ticket, Stripe)
+        and multiple Next.js apps (Driver, Enforcement, Admin, Landing). Delivered real‑time dashboards for drivers/admins, permits/tickets, and Stripe payments.
+        Deployed on AWS EC2 behind NGINX with Docker; practiced TDD (Vitest, Supertest, RTL), JWT/NextAuth security, and i18n. Shipped via sprints and code reviews.
       </p>
 
       <div class="gallery">
+        <figure class="architecture-figure">
+          <img src="photos/parking-architecture.svg" alt="Architecture diagram of the platform: Next.js apps → NGINX → Auth/Permit/Vehicle/Ticket/Stripe services → PostgreSQL, plus Police/Registrar partner APIs" />
+          <figcaption><strong>Architecture:</strong> frontends, gateway, microservices, databases, and partner APIs at a glance.</figcaption>
+        </figure>
         <figure>
           <img src="photos/homescreen-sammyParks.jpg" alt="Landing page with pre-login routes" />
           <figcaption><strong>Landing:</strong> pre-login routes for registering vehicles, purchasing permits, and login/signup.</figcaption>
@@ -187,7 +321,7 @@
       <div class="project-explainer">
         <h4>How it works (short & clear)</h4>
         <ul>
-          <li><strong>Architecture:</strong> three microservices (Driver, Enforcement, Admin), each in its own Docker container with separate environment. NGINX reverse-proxy in front; services communicate via REST.</li>
+          <li><strong>Architecture:</strong> microservices for Auth (REST), Permits/Vehicles/Tickets (GraphQL), and Payments/Stripe (REST); NGINX reverse‑proxy in front.</li>
           <li><strong>Auth:</strong> email/password uses <em>JWT</em> (http-only cookie) for session; Google <em>OAuth</em> provides SSO. Protected routes verify tokens server-side.</li>
           <li><strong>Permits/Tickets:</strong> Admin sets zone limits & pricing. Driver requests a permit → server validates availability & price → creates a pending order.</li>
           <li><strong>Payments:</strong> server creates a Stripe Checkout Session; user pays on Stripe; webhook confirms payment and activates the permit.</li>
@@ -196,6 +330,81 @@
           <li><strong>Deploy:</strong> Dockerized services on AWS EC2; NGINX handles SSL/HTTP2 and routes to containers.</li>
         </ul>
       </div>
+
+      <!-- Recruiter-focused deep dive: compact, comprehensive, scannable -->
+      <div class="patterns-grid" style="margin-top:14px">
+        <section class="info-card">
+          <h4>Architecture</h4>
+          <ul class="bullets">
+            <li><strong>Microservices:</strong> Auth (REST), Permits/Vehicles/Tickets (GraphQL), Payments/Stripe (REST)</li>
+            <li><strong>Frontends:</strong> Four Next.js apps — Driver, Enforcement, Admin, Landing</li>
+            <li><strong>Integrations:</strong> External partner APIs for police and registrar</li>
+          </ul>
+        </section>
+
+        <section class="info-card">
+          <h4>Data & Storage</h4>
+          <ul class="bullets">
+            <li><strong>PostgreSQL per domain:</strong> isolated DBs for auth, permit, ticket, vehicle</li>
+            <li><strong>JSONB models:</strong> flexible schemas for rapid iteration</li>
+            <li><strong>Seeded SQL:</strong> local/dev bootstrap for realistic data</li>
+          </ul>
+        </section>
+
+        <section class="info-card">
+          <h4>Security & Access</h4>
+          <ul class="bullets">
+            <li><strong>JWT + Roles:</strong> driver/admin/enforcement; 30‑min expiry; enforced in resolvers & middleware</li>
+            <li><strong>API Keys:</strong> partner services validated by Auth</li>
+            <li><strong>OAuth:</strong> NextAuth (Google) with session cookie fallback</li>
+          </ul>
+        </section>
+
+        <section class="info-card">
+          <h4>Integrations</h4>
+          <ul class="bullets">
+            <li><strong>Stripe:</strong> Checkout sessions + webhook activation</li>
+            <li><strong>Mailgun:</strong> receipts and ticket notifications</li>
+            <li><strong>HTTP wiring:</strong> GraphQL/REST calls with strict role checks</li>
+          </ul>
+        </section>
+
+        <section class="info-card">
+          <h4>DevOps & CI</h4>
+          <ul class="bullets">
+            <li><strong>Docker Compose:</strong> Postgres + monorepo dev container</li>
+            <li><strong>GitLab CI:</strong> lint/build/test per package; concurrent jobs</li>
+            <li><strong>Local DX:</strong> scripts to run multi‑service dev together</li>
+          </ul>
+        </section>
+
+        <section class="info-card">
+          <h4>Testing & i18n</h4>
+          <ul class="bullets">
+            <li><strong>Coverage:</strong> Vitest + Supertest across apps and services</li>
+            <li><strong>Determinism:</strong> DB test schemas and mocked providers</li>
+            <li><strong>Localization:</strong> next‑intl (en/es) with route‑level tests</li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="info-card project-explainer">
+        <h4>Key Flows</h4>
+        <ul>
+          <li><strong>Buy Permit:</strong> Driver selects vehicle/type → Permit validates via Vehicle, checks zone capacity, creates order; Stripe payment completes and webhook activates permit; Mailgun sends receipt.</li>
+          <li><strong>Issue Ticket:</strong> Enforcement checks plate via Permit; Ticket service creates ticket and emails driver; Admin can override or resolve challenges.</li>
+          <li><strong>Admin Controls:</strong> Manage zone capacities, prices, user status; role‑gated dashboards with real‑time lists.</li>
+        </ul>
+      </section>
+
+      <section class="info-card project-explainer">
+        <h4>Design Choices</h4>
+        <ul>
+          <li><strong>JSONB in Postgres:</strong> faster schema evolution; traded strict constraints for iteration speed.</li>
+          <li><strong>Direct HTTP calls:</strong> simple discovery in a monorepo; future gateway/registry for scale.</li>
+          <li><strong>Role‑gated GraphQL:</strong> @Authorized and resolver checks for clear boundaries.</li>
+        </ul>
+      </section>
     </details>
   </article>
 

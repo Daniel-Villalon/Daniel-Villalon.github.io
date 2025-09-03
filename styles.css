@@ -170,6 +170,14 @@ section h2{
   margin: 0 0 var(--space-3) 0;
   border-radius: 8px;
 }
+.course-description ul{ margin: 0; padding-left: 18px; }
+.course-description.open{ display: block; }
+.course-item.active{ outline: none; box-shadow: 4px 4px 0 rgba(0,0,0,.14); border: 2px solid var(--brand-2); background: #f0fffa; }
+
+@media (prefers-reduced-motion: no-preference){
+  .course-description{ opacity: .95; transform: translateY(-2px); transition: opacity .18s ease, transform .18s ease; }
+  .course-description.open{ opacity: 1; transform: translateY(0); }
+}
 
 /* Chips + Cards */
 .chips{ display: flex; flex-wrap: wrap; gap: var(--space-2); }
@@ -874,6 +882,96 @@ section,
   width: 20px; height: 20px; line-height: 18px; text-align: center;
   background: #fff; border: 2px solid var(--ink); border-radius: 8px;
   box-shadow: 2px 2px 0 rgba(0,0,0,12);
+}
+
+/* Campus Parking: flexible grid like CineSync */
+#project-campus-parking .patterns-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+}
+@media (max-width: 900px){
+  #project-campus-parking .patterns-grid{ grid-template-columns: 1fr; }
+}
+
+/* Campus Parking: generic info cards inside details */
+#project-campus-parking .info-card{
+  background:
+    repeating-linear-gradient(135deg, #ffffff, #ffffff 12px, #f6fffb 12px, #f6fffb 24px);
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: var(--retro-shadow-inner);
+  padding: 14px 16px;
+}
+#project-campus-parking .info-card h4{
+  margin: 0 0 8px;
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--chip);
+  border: 2px solid var(--brand-2);
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0,0,0,.12);
+}
+#project-campus-parking .bullets{ list-style: none; margin: 0; padding-left: 0; }
+#project-campus-parking .bullets li{ position: relative; padding-left: 28px; margin: 6px 0; }
+#project-campus-parking .bullets li::before{
+  content: "✓"; font-weight: 800; color: var(--brand-2);
+  position: absolute; left: 0; top: 2px;
+  width: 20px; height: 20px; line-height: 18px; text-align: center;
+  background: #fff; border: 2px solid var(--ink); border-radius: 8px;
+  box-shadow: 2px 2px 0 rgba(0,0,0,.12);
+}
+
+/* Campus Parking: Highlights strip (interactive but simple) */
+#project-campus-parking .highlights{
+  margin: 12px 0 6px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+}
+@media (max-width: 900px){
+  #project-campus-parking .highlights{ grid-template-columns: 1fr; }
+}
+#project-campus-parking .highlight{
+  position: relative;
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  padding: 10px 12px 10px 44px;
+  box-shadow: var(--retro-shadow-inner);
+  animation: rise-in .28s ease both;
+}
+#project-campus-parking .highlight::before{
+  content: "★";
+  position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+  width: 24px; height: 24px; line-height: 24px; text-align: center;
+  background: var(--chip); color: var(--brand-2);
+  border: 2px solid var(--ink); border-radius: 8px;
+  font-weight: 900;
+}
+#project-campus-parking .highlight strong{ display: block; margin-bottom: 2px; }
+@media (prefers-reduced-motion: no-preference){
+  #project-campus-parking .highlight{ transition: transform .12s ease, box-shadow .14s ease; }
+  #project-campus-parking .highlight:hover{ transform: translateY(-2px); box-shadow: 10px 10px 0 rgba(0,0,0,.18); }
+}
+
+/* Architecture diagram styling inside gallery */
+#project-campus-parking .architecture-figure{
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 840px;
+}
+#project-campus-parking .architecture-figure img{
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Subtle entry animation */
+@keyframes rise-in{
+  from{ opacity: 0; transform: translateY(4px); }
+  to{ opacity: 1; transform: translateY(0); }
 }
 
 /* Featured landing image (big, centered) */

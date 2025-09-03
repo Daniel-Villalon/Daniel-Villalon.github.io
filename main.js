@@ -141,3 +141,42 @@
     }
   });
 })();
+
+// ===== Education: click chips to toggle course descriptions =====
+(function(){
+  const items = Array.from(document.querySelectorAll('.course-item.chip'));
+  if (!items.length) return;
+
+  function closeAll(){
+    document.querySelectorAll('.course-description.open').forEach(el => {
+      el.classList.remove('open');
+      el.setAttribute('aria-hidden', 'true');
+    });
+    items.forEach(i => { i.classList.remove('active'); i.setAttribute('aria-expanded','false'); });
+  }
+
+  function toggleItem(item){
+    const id = item.getAttribute('data-course');
+    const panel = document.getElementById(id);
+    if (!panel) return;
+    const isOpen = panel.classList.contains('open');
+    closeAll();
+    if (!isOpen){
+      panel.classList.add('open');
+      panel.setAttribute('aria-hidden','false');
+      item.classList.add('active');
+      item.setAttribute('aria-expanded','true');
+      panel.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  }
+
+  items.forEach(item => {
+    item.addEventListener('click', () => toggleItem(item));
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleItem(item);
+      }
+    });
+  });
+})();
