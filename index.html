@@ -48,9 +48,18 @@
         <div class="about-flex">
           <img src="photos/aboutme.jpeg" alt="Daniel in Santa Cruz" class="about-photo" />
           <div class="about-text">
-            Hi, I'm Daniel, a Computer Science student at UC Santa Cruz. My focus areas include software engineering,
-            project management, and leveraging technology for positive social and environmental impact. I enjoy
-            collaborating on full-stack projects, exploring AI, and always aim to create tech that's practical and meaningful.
+            I’m Daniel, a Computer Science student who enjoys building software that’s useful and approachable. I like working where technology connects with everyday life, tools that make things simpler, more accessible, and that have a real impact. I’m naturally curious and always learning, and I work best on teams that care about building thoughtfully and improving quickly.
+
+            <h3 style="margin-top:10px">Focus areas</h3>
+            <ul>
+              <li>Software Engineering</li>
+              <li>Systems &amp; Web Development</li>
+              <li>Impact-driven Technology</li>
+            </ul>
+
+            <p style="margin-top:8px; margin-bottom:0">
+              Outside of code, you’ll usually find me surfing, hiking, playing soccer, or traveling. Those experiences keep me grounded and remind me why usability and community matter in the things we build.
+            </p>
           </div>
         </div>
       </div>
@@ -61,6 +70,15 @@
       <div class="container">
         <h2>Education</h2>
         <p><strong>B.A. Computer Science</strong>, University of California, Santa Cruz</p>
+        <div class="card" style="margin: 8px 0 14px">
+          <h3 style="margin:0 0 6px">Education Highlights</h3>
+          <ul style="margin:0 0 0 18px; padding:0">
+            <li>Strong foundation in systems, data, and full‑stack development</li>
+            <li>Hands‑on team projects with testing, CI, and deployment</li>
+            <li>Focus on usability, accessibility, and real‑world impact</li>
+            <li>Joined research programs like Tech4Good</li>
+          </ul>
+        </div>
 
         <h3>Relevant Coursework</h3>
         <ul class="course-list" aria-label="Core CS Courses">
@@ -107,7 +125,7 @@
           <li class="course-item chip" data-course="algorithms" tabindex="0" aria-expanded="false" aria-controls="algorithms">Data Structures & Algorithms</li>
           <div id="algorithms" class="course-description" role="region" aria-hidden="true">
             <ul>
-              <li>Asymptotic analysis; trees/graphs/heaps/hashing; sorting; greedy, divide‑and‑conquer, DP</li>
+              <li>Asymptotic analysis, trees/graphs/heaps/hashing, sorting, greedy, divide‑and‑conquer, DP</li>
               <li>Use: design efficient solutions and prepare for algorithmic interviews</li>
             </ul>
           </div>
@@ -123,7 +141,7 @@
           <li class="course-item chip" data-course="systems-design" tabindex="0" aria-expanded="false" aria-controls="systems-design">Principles of Computer Systems Design</li>
           <div id="systems-design" class="course-description" role="region" aria-hidden="true">
             <ul>
-              <li>Abstractions for concurrency, communication, storage; reliability and fault‑tolerance</li>
+              <li>Abstractions for concurrency, communication, storage, reliability and fault‑tolerance</li>
               <li>Use: design modular, scalable services and APIs</li>
             </ul>
           </div>
@@ -222,21 +240,21 @@
       <h4>Why we built it</h4>
       <p>
         Finding campus parking is frustrating: scattered rules, unclear permit limits, and no single place to see what’s allowed.
-        Our platform makes it simple—one app to buy permits, pay tickets, and see your status in real time. For admins, it’s
+        Our platform makes it simple, one app to buy permits, pay tickets, and see your status in real time. For admins, it’s
         the control center they’ve always wanted: set limits, override prices, and manage accounts with confidence.
       </p>
     </section>
 
     <figure class="featured-hero">
       <img src="photos/homescreen-sammyParks.jpg" alt="Campus Parking Platform landing page" />
-      <figcaption>Landing — clear pre‑login actions (register vehicle, purchase permit, or sign in).</figcaption>
+      <figcaption>Landing, clear pre‑login actions (register vehicle, purchase permit, or sign in).</figcaption>
     </figure>
 
     <section class="info-card project-tech">
       <h4>Tech Overview</h4>
       <ul class="bullets">
         <li><strong>Frontend:</strong> Next.js + TypeScript</li>
-        <li><strong>APIs:</strong> GraphQL + REST (type‑graphql, Express/tsoa); JWT + Google OAuth</li>
+        <li><strong>APIs:</strong> GraphQL + REST (type‑graphql, Express/tsoa), JWT + Google OAuth</li>
         <li><strong>Data:</strong> PostgreSQL per domain with JSONB for flexible models</li>
         <li><strong>Payments:</strong> Stripe Checkout + webhooks</li>
         <li><strong>Infra:</strong> Docker containers behind NGINX (SSL) on AWS EC2</li>
@@ -281,7 +299,7 @@
       <p class="project-summary">
         Worked on a 5‑person Agile team to build a production‑style parking platform with a microservices backend (Auth, Permit, Vehicle, Ticket, Stripe)
         and multiple Next.js apps (Driver, Enforcement, Admin, Landing). Delivered real‑time dashboards for drivers/admins, permits/tickets, and Stripe payments.
-        Deployed on AWS EC2 behind NGINX with Docker; practiced TDD (Vitest, Supertest, RTL), JWT/NextAuth security, and i18n. Shipped via sprints and code reviews.
+        Deployed on AWS EC2 behind NGINX with Docker, practiced TDD (Vitest, Supertest, RTL), JWT/NextAuth security, and i18n. Shipped via sprints and code reviews.
       </p>
 
       <div class="gallery">
@@ -298,7 +316,7 @@
 
         <figure>
           <img src="photos/trying-to-buy-permit-prestripe.jpg" alt="Buy permit modal before payment" />
-          <figcaption><strong>Buy Permit:</strong> driver selects permit type/zone/vehicle; price is calculated before checkout.</figcaption>
+          <figcaption><strong>Buy Permit:</strong> driver selects permit type/zone/vehicle, price is calculated before checkout.</figcaption>
         </figure>
 
         <figure>
@@ -308,7 +326,7 @@
 
         <figure>
           <img src="photos/admin-driveAccounts.jpg" alt="Admin app driver accounts list with suspend buttons" />
-          <figcaption><strong>Admin – Accounts:</strong> view all users, set <em>active/suspended</em>; updates propagate via service APIs.</figcaption>
+          <figcaption><strong>Admin – Accounts:</strong> view all users, set <em>active/suspended</em>, updates propagate via service APIs.</figcaption>
         </figure>
 
         <figure>
@@ -320,13 +338,13 @@
       <div class="project-explainer">
         <h4>How it works (short & clear)</h4>
         <ul>
-          <li><strong>Architecture:</strong> microservices for Auth (REST), Permits/Vehicles/Tickets (GraphQL), and Payments/Stripe (REST); NGINX reverse‑proxy in front.</li>
-          <li><strong>Auth:</strong> email/password uses <em>JWT</em> (http-only cookie) for session; Google <em>OAuth</em> provides SSO. Protected routes verify tokens server-side.</li>
+          <li><strong>Architecture:</strong> microservices for Auth (REST), Permits/Vehicles/Tickets (GraphQL), and Payments/Stripe (REST), NGINX reverse‑proxy in front.</li>
+          <li><strong>Auth:</strong> email/password uses <em>JWT</em> (http-only cookie) for session, Google <em>OAuth</em> provides SSO. Protected routes verify tokens server-side.</li>
           <li><strong>Permits/Tickets:</strong> Admin sets zone limits & pricing. Driver requests a permit → server validates availability & price → creates a pending order.</li>
-          <li><strong>Payments:</strong> server creates a Stripe Checkout Session; user pays on Stripe; webhook confirms payment and activates the permit.</li>
-          <li><strong>Admin Control:</strong> Admin UI lists all accounts; can suspend/enable users and override pricing/limits. Changes persist in PostgreSQL and show up via service APIs.</li>
-          <li><strong>Testing/Quality:</strong> TDD with Vitest/Supertest/RTL; type-safe endpoints with TypeScript.</li>
-          <li><strong>Deploy:</strong> Dockerized services on AWS EC2; NGINX handles SSL/HTTP2 and routes to containers.</li>
+          <li><strong>Payments:</strong> server creates a Stripe Checkout Session, user pays on Stripe, webhook confirms payment and activates the permit.</li>
+          <li><strong>Admin Control:</strong> Admin UI lists all accounts, can suspend/enable users and override pricing/limits. Changes persist in PostgreSQL and show up via service APIs.</li>
+          <li><strong>Testing/Quality:</strong> TDD with Vitest/Supertest/RTL, type-safe endpoints with TypeScript.</li>
+          <li><strong>Deploy:</strong> Dockerized services on AWS EC2, NGINX handles SSL/HTTP2 and routes to containers.</li>
         </ul>
       </div>
 
@@ -336,7 +354,7 @@
           <h4>Architecture</h4>
           <ul class="bullets">
             <li><strong>Microservices:</strong> Auth (REST), Permits/Vehicles/Tickets (GraphQL), Payments/Stripe (REST)</li>
-            <li><strong>Frontends:</strong> Four Next.js apps — Driver, Enforcement, Admin, Landing</li>
+            <li><strong>Frontends:</strong> Four Next.js apps, Driver, Enforcement, Admin, Landing</li>
             <li><strong>Integrations:</strong> External partner APIs for police and registrar</li>
           </ul>
         </section>
@@ -353,7 +371,7 @@
         <section class="info-card">
           <h4>Security & Access</h4>
           <ul class="bullets">
-            <li><strong>JWT + Roles:</strong> driver/admin/enforcement; 30‑min expiry; enforced in resolvers & middleware</li>
+            <li><strong>JWT + Roles:</strong> driver/admin/enforcement, 30‑min expiry, enforced in resolvers & middleware</li>
             <li><strong>API Keys:</strong> partner services validated by Auth</li>
             <li><strong>OAuth:</strong> NextAuth (Google) with session cookie fallback</li>
           </ul>
@@ -372,7 +390,7 @@
           <h4>DevOps & CI</h4>
           <ul class="bullets">
             <li><strong>Docker Compose:</strong> Postgres + monorepo dev container</li>
-            <li><strong>GitLab CI:</strong> lint/build/test per package; concurrent jobs</li>
+            <li><strong>GitLab CI:</strong> lint/build/test per package, concurrent jobs</li>
             <li><strong>Local DX:</strong> scripts to run multi‑service dev together</li>
           </ul>
         </section>
@@ -390,17 +408,17 @@
       <section class="info-card project-explainer">
         <h4>Key Flows</h4>
         <ul>
-          <li><strong>Buy Permit:</strong> Driver selects vehicle/type → Permit validates via Vehicle, checks zone capacity, creates order; Stripe payment completes and webhook activates permit; Mailgun sends receipt.</li>
-          <li><strong>Issue Ticket:</strong> Enforcement checks plate via Permit; Ticket service creates ticket and emails driver; Admin can override or resolve challenges.</li>
-          <li><strong>Admin Controls:</strong> Manage zone capacities, prices, user status; role‑gated dashboards with real‑time lists.</li>
+          <li><strong>Buy Permit:</strong> Driver selects vehicle/type → Permit validates via Vehicle, checks zone capacity, creates order, Stripe payment completes and webhook activates permit, Mailgun sends receipt.</li>
+          <li><strong>Issue Ticket:</strong> Enforcement checks plate via Permit, Ticket service creates ticket and emails driver, Admin can override or resolve challenges.</li>
+          <li><strong>Admin Controls:</strong> Manage zone capacities, prices, user status, role‑gated dashboards with real‑time lists.</li>
         </ul>
       </section>
 
       <section class="info-card project-explainer">
         <h4>Design Choices</h4>
         <ul>
-          <li><strong>JSONB in Postgres:</strong> faster schema evolution; traded strict constraints for iteration speed.</li>
-          <li><strong>Direct HTTP calls:</strong> simple discovery in a monorepo; future gateway/registry for scale.</li>
+          <li><strong>JSONB in Postgres:</strong> faster schema evolution, traded strict constraints for iteration speed.</li>
+          <li><strong>Direct HTTP calls:</strong> simple discovery in a monorepo, future gateway/registry for scale.</li>
           <li><strong>Role‑gated GraphQL:</strong> @Authorized and resolver checks for clear boundaries.</li>
         </ul>
       </section>
@@ -456,7 +474,7 @@
       <h4>Sign‑in & Sessions</h4>
       <ul class="bullets">
         <li><strong>What it does:</strong> Email/password and “Continue with Google.” Sessions stay signed‑in across app restarts.</li>
-        <li><strong>How it works:</strong> Firebase Auth issues an ID token; we refresh it automatically and read simple role claims (owner/mod/member).</li>
+        <li><strong>How it works:</strong> Firebase Auth issues an ID token, we refresh it automatically and read simple role claims (owner/mod/member).</li>
         <li><strong>Why this matters:</strong> Low friction for users, and predictable permissions for the app.</li>
       </ul>
     </section>
@@ -466,7 +484,7 @@
       <h4>Groups & Access</h4>
       <ul class="bullets">
         <li><strong>What it does:</strong> Users create or join groups to plan movie nights together.</li>
-        <li><strong>How it works:</strong> Each group has members with roles. Firebase Security Rules allow only members to change group data; owners can toggle fairness or manage members.</li>
+        <li><strong>How it works:</strong> Each group has members with roles. Firebase Security Rules allow only members to change group data, owners can toggle fairness or manage members.</li>
         <li><strong>Why this matters:</strong> Permissions are enforced server‑side, so UI mistakes don’t become security issues.</li>
       </ul>
     </section>
@@ -475,8 +493,8 @@
     <section class="info-card">
       <h4>Invites & Onboarding</h4>
       <ul class="bullets">
-        <li><strong>What it does:</strong> Invite friends by email; they can accept or decline. Pending invites show up as a small badge.</li>
-        <li><strong>How it works:</strong> An invite document is created; when it’s accepted we add the member to the group and bump a lightweight counter that drives the badge.</li>
+        <li><strong>What it does:</strong> Invite friends by email, they can accept or decline. Pending invites show up as a small badge.</li>
+        <li><strong>How it works:</strong> An invite document is created, when it’s accepted we add the member to the group and bump a lightweight counter that drives the badge.</li>
         <li><strong>Why this matters:</strong> Onboarding is reliable and the badge updates instantly without heavy reads.</li>
       </ul>
     </section>
@@ -505,7 +523,7 @@
     <section class="info-card">
       <h4>Sorting & Filtering</h4>
       <ul class="bullets">
-        <li><strong>What it does:</strong> Order by likes or Rotten Tomatoes score; filter by genre.</li>
+        <li><strong>What it does:</strong> Order by likes or Rotten Tomatoes score, filter by genre.</li>
         <li><strong>How it works:</strong> We keep a small client‑side index to combine signals without expensive multi‑field queries. Results are memoized so scrolling stays smooth.</li>
       </ul>
     </section>
@@ -514,7 +532,7 @@
     <section class="info-card">
       <h4>Realtime Experience</h4>
       <ul class="bullets">
-        <li><strong>What it does:</strong> Everyone sees changes as they happen—new movies, likes, invite counts.</li>
+        <li><strong>What it does:</strong> Everyone sees changes as they happen, new movies, likes, invite counts.</li>
         <li><strong>How it works:</strong> Live listeners stream updates to the screen. We preserve scroll position and resync after reconnecting.</li>
       </ul>
     </section>
@@ -535,7 +553,7 @@
     <ol class="steps">
       <li><strong>Search</strong> returns results from the external API.</li>
       <li><strong>Select</strong> saves one canonical movie record and links it to your group’s watchlist, so the same title isn’t duplicated across groups.</li>
-      <li><strong>Instant feedback</strong>: the movie appears immediately; if the server rejects the change we revert to the last confirmed state.</li>
+      <li><strong>Instant feedback</strong>: the movie appears immediately, if the server rejects the change we revert to the last confirmed state.</li>
       <li><strong>Realtime</strong>: everyone in the group sees the update without refreshing, and badges update via a lightweight counter.</li>
     </ol>
   </section>
@@ -549,126 +567,55 @@
           </div>
 
           <p>
-            Two‑part project: a Flask web app that simulates Edward de Bono’s Six Thinking Hats with GPT‑3.5‑Turbo, and a set of ML/NLP
-            experiments that cluster and analyze real review text (TF‑IDF, KMeans, LSA, dual sentiment). Shows LLM prompt engineering and
-            practical pipelines working together—from interactive brainstorming to explainable clusters and visuals.
+            I built this to explore bias in AI answers and ways to make responses more balanced. The app gathers six short viewpoints
+            (the “Six Thinking Hats”) for any prompt, adds a critical check for balance, and then groups the text to see patterns in tone
+            and themes. The goal was simple, clearer answers with fewer one‑sided takes.
           </p>
 
           <div class="chips">
-            <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Flask‑Session</span>
-            <span class="chip">OpenAI (GPT‑3.5‑Turbo)</span><span class="chip">scikit‑learn</span><span class="chip">pandas</span>
-            <span class="chip">TextBlob</span><span class="chip">NLTK VADER</span><span class="chip">matplotlib</span>
-            <span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span>
+            <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">OpenAI</span>
+            <span class="chip">Prompting</span><span class="chip">Clustering</span><span class="chip">Sentiment</span>
           </div>
 
           
 
           <details class="details tech-details">
-            <summary class="btn btn-ghost">Core Stack &amp; How It Works</summary>
+            <summary class="btn btn-ghost">Big Picture &amp; Findings</summary>
 
             <div class="patterns-grid">
               <section class="info-card">
-                <h4>Languages</h4>
+                <h4>Purpose</h4>
                 <ul class="bullets">
-                  <li>Python — backend + ML/NLP experiments</li>
-                  <li>JavaScript — frontend interactivity (fetch, DOM)</li>
-                  <li>HTML5 — static chat UI</li>
-                  <li>CSS3 — custom styling</li>
+                  <li>Explore how prompts shape bias in AI answers</li>
+                  <li>Find simple ways to get more balanced responses</li>
                 </ul>
               </section>
 
               <section class="info-card">
-                <h4>Backend</h4>
+                <h4>How it works</h4>
                 <ul class="bullets">
-                  <li>Flask — web server, routes, serves static assets</li>
-                  <li>Flask‑Session — server‑side sessions (filesystem store)</li>
-                  <li>OpenAI Python SDK — GPT‑3.5‑Turbo completions</li>
+                  <li>Generate six short perspectives (hats) for each prompt</li>
+                  <li>Add an extra critical take to check optimism and balance</li>
+                  <li>Group similar ideas and compare tone to spot skew</li>
                 </ul>
               </section>
 
               <section class="info-card">
-                <h4>Frontend</h4>
+                <h4>Experiments</h4>
                 <ul class="bullets">
-                  <li>Vanilla JS — Fetch API, DOM updates</li>
-                  <li>HTML — single‑page chat shell</li>
-                  <li>CSS — custom design (no frameworks)</li>
+                  <li>With vs. without roles to see variety and coverage</li>
+                  <li>Measure whether an added critique shifts overall balance</li>
                 </ul>
               </section>
 
               <section class="info-card">
-                <h4>AI / LLM</h4>
+                <h4>What I learned</h4>
                 <ul class="bullets">
-                  <li>GPT‑3.5‑Turbo — “Six Thinking Hats” multi‑agent prompts</li>
-                  <li>Prompt Engineering — roles: White, Red, Black, Yellow, Green, Blue</li>
-                  <li>Feedback loop — extra Black Hat critique to balance others</li>
+                  <li>Structured prompts surface more angles and reduce one‑sidedness</li>
+                  <li>A small critique step further balances positive/negative tone</li>
+                  <li>Lightweight grouping is enough to visualize bias patterns</li>
                 </ul>
               </section>
-
-              <section class="info-card">
-                <h4>NLP / ML Libraries</h4>
-                <ul class="bullets">
-                  <li>scikit‑learn — TF‑IDF, KMeans, TruncatedSVD (LSA), cosine similarity</li>
-                  <li>pandas — data wrangling, CSV I/O</li>
-                  <li>TextBlob — sentiment polarity (continuous)</li>
-                  <li>NLTK VADER — sentiment class (pos/neutral/neg)</li>
-                  <li>matplotlib — plots (clusters, sentiment charts)</li>
-                </ul>
-              </section>
-
-              <section class="info-card">
-                <h4>Algorithms &amp; Techniques</h4>
-                <ul class="bullets">
-                  <li>Vectorization — TF‑IDF (uni/bigrams)</li>
-                  <li>Dimensionality — TruncatedSVD → 2D LSA projection</li>
-                  <li>Clustering — KMeans (2 for polarity; 5 for topics)</li>
-                  <li>Similarity — cosine similarity inside clusters</li>
-                  <li>Sentiment — TextBlob + VADER dual approach</li>
-                  <li>Post‑processing — avg sentiment per cluster → relabel</li>
-                </ul>
-              </section>
-
-              <section class="info-card">
-                <h4>Data &amp; Outputs</h4>
-                <ul class="bullets">
-                  <li>CSV — input datasets (reviews) + labeled outputs</li>
-                  <li>PNG — clustering visuals, sentiment by cluster</li>
-                  <li>Static assets — frontend HTML, CSS, JS</li>
-                </ul>
-              </section>
-
-              <section class="info-card">
-                <h4>State &amp; Sessions</h4>
-                <ul class="bullets">
-                  <li>Filesystem session store — Flask‑Session keeps per‑user chat history</li>
-                </ul>
-              </section>
-
-              <section class="info-card">
-                <h4>Config &amp; Secrets</h4>
-                <ul class="bullets">
-                  <li>.env — stores OPENAI_API_KEY</li>
-                  <li>.gitignore — should ignore secrets + session data</li>
-                </ul>
-              </section>
-
-              <section class="info-card">
-                <h4>Dev &amp; Misc</h4>
-                <ul class="bullets">
-                  <li>Git — version control</li>
-                  <li>Paths — switch absolute → relative in ML scripts</li>
-                  <li>Flask dev server — debug=True during development</li>
-                </ul>
-              </section>
-            </div>
-
-            <div class="project-explainer">
-              <h4>Why it matters</h4>
-              <p>
-                I built a two‑part project that blends interactive brainstorming with traditional NLP/ML analysis. The Flask app simulates
-                Six Thinking Hats to generate balanced perspectives with an automatic Black Hat critique. In parallel, scikit‑learn pipelines
-                cluster reviews, reduce dimensions (LSA), compute cosine similarity, and measure sentiment with TextBlob + VADER. The result is
-                a practical system that pairs real‑time ideation with explainable, data‑driven insights.
-              </p>
             </div>
           </details>
         </article>
@@ -680,7 +627,7 @@
           </div>
           <p>
             Interactive quiz app for U.S. citizenship practice. Loads questions from a database, guides users one‑by‑one with instant feedback,
-            tracks score and progress, and supports optional login‑protected pages — designed to keep learners engaged.
+            tracks score and progress, and supports optional login‑protected pages, designed to keep learners engaged.
           </p>
           <div class="chips">
             <span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">React</span>
@@ -725,7 +672,7 @@
                 <h4>Architecture</h4>
                 <ul class="bullets">
                   <li>Public content and protected areas with route protection via middleware</li>
-                  <li>SSR session handling with Supabase; client SDK for in‑app data fetches</li>
+                  <li>SSR session handling with Supabase, client SDK for in‑app data fetches</li>
                   <li>Environment‑driven configuration across environments</li>
                 </ul>
               </section>
@@ -742,7 +689,7 @@
                 <h4>Product Features</h4>
                 <ul class="bullets">
                   <li>Progress bar, score badge, per‑question card with A/B/C/D answers</li>
-                  <li>Instant green/red feedback with icons; “Next” disabled until answered</li>
+                  <li>Instant green/red feedback with icons, “Next” disabled until answered</li>
                   <li>Normalizes JSON choices + indices for reliable correctness</li>
                 </ul>
               </section>
@@ -788,7 +735,7 @@
           </div>
           <ul>
             <li>Organized and ran campus sports events, ensuring safety and schedule efficiency.</li>
-            <li>Trained and supported referees; handled disputes and resolved issues live.</li>
+            <li>Trained and supported referees, handled disputes and resolved issues live.</li>
             <li>Developed leadership and conflict resolution skills managing teams/events.</li>
           </ul>
         </article>
@@ -845,20 +792,20 @@
           <div class="skill-group">
             <h3>Frameworks & Libraries</h3>
             <div class="chips">
-              <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">React Native</span>
-              <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">Angular</span>
-              <span class="chip">Firebase</span>
+              <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Node.js</span>
+              <span class="chip">Express</span><span class="chip">GraphQL</span><span class="chip">Tailwind CSS</span>
+              <span class="chip">shadcn/ui</span><span class="chip">Supabase</span>
             </div>
           </div>
 
           <div class="skill-group">
             <h3>Tools & Platforms</h3>
             <div class="chips">
-              <span class="chip">GitHub</span><span class="chip">Vitest</span><span class="chip">Supertest</span>
-              <span class="chip">React Testing Library</span><span class="chip">TSOA</span><span class="chip">Jupyter</span>
-              <span class="chip">Visual Studio Code</span><span class="chip">AWS EC2</span><span class="chip">NGINX</span>
-              <span class="chip">JWT</span><span class="chip">REST APIs</span><span class="chip">TDD</span>
-              <span class="chip">CI/CD</span>
+              <span class="chip">Docker</span><span class="chip">NGINX</span><span class="chip">AWS EC2</span>
+              <span class="chip">GitHub</span><span class="chip">GitLab CI</span>
+              <span class="chip">Vitest</span><span class="chip">Supertest</span><span class="chip">React Testing Library</span>
+              <span class="chip">NextAuth</span><span class="chip">Stripe</span><span class="chip">Mailgun</span>
+              <span class="chip">JWT</span><span class="chip">REST/GraphQL APIs</span><span class="chip">TDD</span>
             </div>
           </div>
         </div>

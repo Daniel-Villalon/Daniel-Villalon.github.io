@@ -158,6 +158,67 @@
   });
 })();
 
+// ===== Smooth scroll with ease-in-out and active link highlight =====
+(function(){
+  const links = Array.from(document.querySelectorAll('.site-nav .nav-link'));
+  if (!links.length) return;
+
+  const easeInOutCubic = (t) => t < 0.5
+    ? 4 * t * t * t
+    : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+  function animateScrollTo(targetY, duration = 900){
+    const startY = window.scrollY || window.pageYOffset;
+    const delta = targetY - startY;
+    let start;
+    function step(ts){
+      if (!start) start = ts;
+      const t = Math.min(1, (ts - start) / duration);
+      const eased = easeInOutCubic(t);
+      window.scrollTo(0, startY + delta * eased);
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function getOffsetTop(el){
+    const rect = el.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const nav = document.querySelector('.site-nav');
+    const navH = nav ? nav.offsetHeight : 0;
+    return rect.top + scrollTop - Math.max(0, navH - 2);
+  }
+
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href || !href.startsWith('#')) return;
+    const id = href.slice(1);
+    const target = document.getElementById(id);
+    if (!target) return;
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const y = getOffsetTop(target);
+      animateScrollTo(y, 900);
+    });
+  });
+
+  // Scrollspy: update active link as sections enter viewport
+  const sections = links
+    .map(l => document.getElementById(l.getAttribute('href').slice(1)))
+    .filter(Boolean);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        const id = entry.target.id;
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === `#${id}`));
+      }
+    });
+  }, { root: null, rootMargin: '0px 0px -70% 0px', threshold: 0.1 });
+
+  sections.forEach(sec => observer.observe(sec));
+})();
+
 // ===== Education: click chips to toggle course descriptions =====
 (function(){
   const items = Array.from(document.querySelectorAll('.course-item.chip'));
