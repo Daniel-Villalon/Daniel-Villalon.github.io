@@ -127,6 +127,37 @@
   });
 })();
 
+// ===== Six Hats gallery → open lightbox with group nav =====
+(function(){
+  const gallery = document.querySelector('#project-six-hats .gallery');
+  const lb = document.getElementById('lightbox');
+  if (!gallery || !lb) return;
+
+  gallery.addEventListener('click', (e) => {
+    const img = e.target.closest('img');
+    if (!img || !gallery.contains(img)) return;
+
+    const images = Array.from(gallery.querySelectorAll('img'));
+    const currentIndex = images.indexOf(img);
+    window.__lbGroup = images;
+    window.__lbIndex = currentIndex >= 0 ? currentIndex : 0;
+
+    const lbImg = lb.querySelector('img');
+    const lbCap = lb.querySelector('.lightbox-caption');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    lbImg.src = img.src;
+    if (lbCap) lbCap.textContent = img.getAttribute('alt') || '';
+
+    lb.hidden = false;
+    if (!reduceMotion){
+      requestAnimationFrame(() => lb.classList.add('open'));
+    } else {
+      lb.classList.add('open');
+    }
+  });
+})();
+
 // ===== Campus Parking gallery → open lightbox with group nav =====
 (function(){
   const gallery = document.querySelector('#project-campus-parking .gallery');

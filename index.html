@@ -465,7 +465,7 @@
             </figure>
           </div>
         <!-- ===== CineSync: App Directory Structure & Patterns ===== -->
-<details class="details tech-details" open>
+<details class="details tech-details">
   <summary class="btn btn-ghost">Core Features &amp; How It Works</summary>
 
   <div class="patterns-grid">
@@ -567,9 +567,9 @@
           </div>
 
           <p>
-            I built this to explore bias in AI answers and ways to make responses more balanced. The app gathers six short viewpoints
-            (the “Six Thinking Hats”) for any prompt, adds a critical check for balance, and then groups the text to see patterns in tone
-            and themes. The goal was simple, clearer answers with fewer one‑sided takes.
+            This project has two parts: an interactive “Six Thinking Hats” app and a simple clustering analysis of many reviews. I built it to
+            explore bias in AI answers and find ways to make responses more balanced. The app gathers six short viewpoints for any prompt,
+            adds a quick critique for balance, and I group text to spot patterns in tone and themes.
           </p>
 
           <div class="chips">
@@ -577,12 +577,57 @@
             <span class="chip">Prompting</span><span class="chip">Clustering</span><span class="chip">Sentiment</span>
           </div>
 
+          <!-- Visuals for clustering part (click to zoom) -->
+          <div class="gallery" style="margin-top:16px">
+            <p class="gallery-hint">Tip: click any image to view full size</p>
+            <figure>
+              <img src="photos/genAI/cluster_plot.png" alt="2D map of Amazon reviews after simple text features, colors show two learned clusters, axes are latent directions" />
+              <figcaption><strong>Cluster map (structure):</strong> each dot is a review, separated into two groups that line up with overall tone.</figcaption>
+            </figure>
+            <figure>
+              <img src="photos/genAI/image.png" alt="Sentiment by cluster chart showing how each group leans positive or negative" />
+              <figcaption><strong>Sentiment by cluster (distribution):</strong> quick read on which group is mostly positive vs. mostly negative.</figcaption>
+            </figure>
+          </div>
+
           
 
           <details class="details tech-details">
-            <summary class="btn btn-ghost">Big Picture &amp; Findings</summary>
+            <summary class="btn btn-ghost">Part 1: Six Hats</summary>
 
             <div class="patterns-grid">
+              
+              
+              <section class="info-card">
+                <h4>Six Hats at a glance</h4>
+                <ul class="bullets">
+                  <li><strong>White:</strong> facts and data</li>
+                  <li><strong>Red:</strong> feelings and intuition</li>
+                  <li><strong>Black:</strong> risks and downsides</li>
+                  <li><strong>Yellow:</strong> benefits and opportunities</li>
+                  <li><strong>Green:</strong> creative ideas and alternatives</li>
+                  <li><strong>Blue:</strong> facilitator that keeps things structured</li>
+                </ul>
+              </section>
+              <section class="info-card">
+                <h4>Six Hats in action</h4>
+                <ul class="bullets">
+                  <li><strong>White:</strong> “Superman has super strength, flight, and intellect,” argues from proven feats</li>
+                  <li><strong>Red:</strong> “Wonder Woman inspires hope and compassion,” chooses with heart</li>
+                  <li><strong>Black:</strong> “Batman plans for risks,” flags weaknesses and hard trade offs</li>
+                  <li><strong>Yellow:</strong> “Captain America unites people,” leans into benefits and teamwork</li>
+                  <li><strong>Green:</strong> “Doctor Strange bends reality,” offers imaginative alternatives</li>
+                  <li><strong>Blue:</strong> keeps turns fair, summarizes next steps, and watches for a saboteur</li>
+                </ul>
+              </section>
+              <section class="info-card">
+                <h4>Six Hats: inputs &amp; outputs</h4>
+                <ul class="bullets">
+                  <li><strong>Input:</strong> one topic or question; roles take turns (facts, feelings, risks, benefits, creative ideas, facilitator)</li>
+                  <li><strong>Output:</strong> a short multi‑voice transcript with agreement and pushback, a neutral organizer summary, and a quick critique to temper bias</li>
+                  <li><strong>Example:</strong> “who should save the world?” sparks picks like Superman or Wonder Woman, with each role arguing from its lens</li>
+                </ul>
+              </section>
               <section class="info-card">
                 <h4>Purpose</h4>
                 <ul class="bullets">
@@ -617,6 +662,91 @@
                 </ul>
               </section>
             </div>
+          </details>
+          
+          <!-- Part 2: Clustering details -->
+          <details class="details tech-details" style="margin-top:12px">
+            <summary class="btn btn-ghost">Part 2: Clustering</summary>
+            <div class="patterns-grid">
+              <section class="info-card">
+                <h4>Clustering snapshot</h4>
+                <ul class="bullets">
+                  <li><strong>Inputs:</strong> many short product reviews, text only</li>
+                  <li><strong>Goal:</strong> group reviews by sentiment without labels, positive vs. negative</li>
+                  <li><strong>Approach:</strong> simple text features to two clusters, check balance with a lightweight sentiment signal</li>
+                  <li><strong>Outputs:</strong> a cluster map that shows structure and tone at a glance</li>
+                  <li><strong>Takeaway:</strong> even a simple pipeline can surface sentiment patterns and bias</li>
+                </ul>
+              </section>
+            </div>
+          </details>
+          
+          <!-- Full transcript (cleaned) -->
+          <details class="details transcript-viewer" style="margin-top:12px">
+            <summary class="btn btn-ghost">View full Six Hats transcript</summary>
+            <pre class="transcript-pre">
+In this scenario, each player brings a unique perspective to the discussion.
+
+- The Factual thinker will assess the superheroes based on their abilities, powers, and track record of saving the world. They will focus solely on data and information without adding personal bias.
+- The Emotional player may choose a superhero based on their personal connection, admiration, or emotional response towards a particular hero.
+- The Critical thinker will analyze the strengths and weaknesses of each superhero, pointing out flaws and potential drawbacks in their abilities and approach to saving the world.
+- The Optimistic player will emphasize the positive outcomes and potential of each superhero, looking at the bright side and focusing on hope and possibilities.
+- The Creative player may suggest unconventional or out-of-the-box ideas on how each superhero could save the world, bringing fresh and imaginative solutions to the discussion.
+
+The organizer's role is crucial to ensure the discussion remains organized and on track. They will facilitate communication, ensure everyone has a chance to speak, and guide the discussion towards a collective decision based on logical reasoning.
+
+Through this structured discussion, the group can collectively evaluate and compare different superheroes based on a variety of perspectives. By weighing the factual information, emotional connections, critical analysis, optimistic outlook, and creative suggestions, they can identify the superhero best equipped to save the world.
+
+As the discussion progresses, the organizer may notice inconsistencies, illogical arguments, or suspicious behavior that could point to a secret villain among the group. By observing the interactions and information shared during the discussion, the organizer can identify any discrepancies that may reveal the secret villain's true identity.
+
+---
+
+While the structured discussion involving different perspectives on selecting a superhero to save the world is commendable, it also presents some potential pitfalls:
+
+- The Emotional player's attachment to a particular hero based on personal connections or admiration might cloud their judgment. They may overlook crucial flaws in their chosen hero, leading to a biased decision that could hinder the team's success in saving the world.
+- The Optimistic player's focus on positive outcomes and possibilities may result in overlooking potential risks or threats posed by certain superheroes. This blind optimism could leave the team vulnerable to unforeseen challenges or dangers while trying to save the world.
+- The Creative player's unconventional ideas, while innovative, may not always be practical or effective in a high-stakes world-saving scenario. Relying too heavily on unconventional solutions could lead to wasted time and resources that could be better utilized in a more strategic approach.
+- The Critical thinker's emphasis on pointing out flaws and weaknesses in superheroes could create a negative atmosphere within the group, potentially stifling creativity and collaboration. Constantly highlighting the downsides without offering constructive solutions could demotivate the team and hinder their ability to work together effectively.
+- The organizer's role in facilitating the discussion and guiding towards a collective decision is crucial. However, if the organizer is not impartial or fails to manage conflicting viewpoints effectively, it could lead to discord within the group and prevent them from reaching a consensus on which superhero to choose.
+
+Overall, while each perspective brings value to the discussion, it is essential to balance emotional connections, optimism, critical analysis, creativity, and organizational skills to ensure a well-rounded and effective decision-making process when selecting a superhero to save the world.
+
+---
+
+The discussion among these passionate individuals about which superhero is best equipped to save the world is intense and filled with emotions:
+
+- **Factual**: Relies on hard data and proven abilities, arguing for Superman based on his super strength, flight, and intellect as key assets to combat threats.
+- **Emotional**: Deeply invested in the personal stories of superheroes, passionately advocating for Wonder Woman, highlighting her compassion, bravery, and ability to inspire hope in others.
+- **Critical**: Skeptical and objective, making a case for Batman, emphasizing his strategic mind, advanced technology, and willingness to do whatever it takes to protect the world.
+- **Optimistic**: Sees the bright side and power of teamwork. Supports Captain America for his leadership, moral compass, and ability to unite people.
+- **Creative**: Thinks outside the box, proposing Doctor Strange for his mastery of magic and manipulation of reality, offering unique solutions.
+
+The organizer ensures everyone's voice is heard, keeps the discussion on track, and helps the group reach a collective decision. But as the debate heats up, suspicions arise that one of the players might secretly be a villain, manipulating the conversation to push their own agenda. Their hidden motives start to unravel, creating tension within the group.
+
+---
+
+Potential pitfalls of this discussion approach include:
+
+1. **Conflict and Division**: Passionate advocacy may lead to disagreements and conflict, undermining unity.
+2. **Lack of Objective Analysis**: Overreliance on emotions may neglect critical evaluation.
+3. **Deception and Manipulation**: Hidden agendas could sow distrust and sabotage collaboration.
+4. **Failure to Address Root Issues**: Focusing on surface traits may distract from systemic problems.
+5. **Overlooking Unintended Consequences**: Heroes' actions may cause collateral damage.
+
+While each perspective has strengths, balanced collaboration is key to effective group decision-making.
+
+---
+
+The structured organizer introduces order, ensuring each perspective is heard:
+
+- The factual player cites evidence and feats.
+- The emotional player highlights inspiration and unity.
+- The critical player flags risks.
+- The optimistic player stresses hope and resilience.
+- The creative player suggests novel strategies.
+
+Eventually, suspicions about a secret villain grow stronger. The organizer identifies manipulative behavior, exposing the villain’s agenda. The group unites, leveraging all perspectives to select the most capable superhero and foil the hidden threat.
+            </pre>
           </details>
         </article>
 
