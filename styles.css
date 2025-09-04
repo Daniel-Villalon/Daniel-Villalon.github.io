@@ -409,6 +409,45 @@ section{ padding: var(--space-6) 0; }
   border-top: 1px solid #e6eeec;
 }
 
+/* ---- Preview gallery (placed above details) ---- */
+.preview-gallery{
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+}
+@media (max-width: 900px){ .preview-gallery{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 600px){ .preview-gallery{ grid-template-columns: 1fr; } }
+.preview-gallery figure{
+  margin: 0;
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 8px 8px 0 rgba(0,0,0,.16);
+  overflow: hidden;
+}
+.preview-gallery img{
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.preview-gallery figcaption{
+  font-size: .92rem;
+  padding: 8px 10px;
+  background: #f7fbfa;
+  border-top: 1px solid #e6eeec;
+}
+.preview-placeholder{
+  display: grid;
+  place-items: center;
+  min-height: 120px;
+  border: 2px dashed var(--brand-2);
+  border-radius: 12px;
+  color: var(--muted);
+  background: #fff;
+}
+
 /* ---- Explainer box ---- */
 .project-explainer{
   margin-top: 16px;
@@ -719,6 +758,50 @@ section{ padding: var(--space-6) 0; }
   box-shadow: 6px 6px 0 rgba(0,0,0,.16);
 }
 
+/* ---- Citizenship Project: match retro info-card + grid ---- */
+#project-citizenship .tech-details{ margin-top: 18px; }
+#project-citizenship .tech-details > summary.btn{
+  position: relative; padding-right: 55px;
+}
+#project-citizenship .tech-details > summary.btn::after{
+  content: "›";
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%) rotate(90deg);
+  width: 26px; height: 26px; line-height: 26px; text-align: center;
+  border: 3px solid var(--ink); border-radius: 8px; background: #fff; font-weight: 900;
+  box-shadow: var(--retro-shadow-details);
+}
+#project-citizenship .tech-details[open] > summary.btn::after{ transform: translateY(-50%) rotate(270deg); }
+
+#project-citizenship .patterns-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px; margin-top: 14px;
+}
+@media (max-width: 900px){ #project-citizenship .patterns-grid{ grid-template-columns: 1fr; } }
+
+#project-citizenship .info-card{
+  background:
+    repeating-linear-gradient(135deg, #ffffff, #ffffff 12px, #f6fffb 12px, #f6fffb 24px);
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 8px 8px 0 rgba(0,0,0,.16);
+  padding: 14px 16px;
+}
+#project-citizenship .info-card h4{
+  margin: 0 0 8px; display: inline-block; padding: 4px 10px;
+  background: var(--chip); border: 2px solid var(--brand-2);
+  border-radius: 10px; box-shadow: 3px 3px 0 rgba(0,0,0,.12);
+}
+#project-citizenship .bullets{ list-style: none; margin: 0; padding-left: 0; }
+#project-citizenship .bullets li{ position: relative; padding-left: 28px; margin: 6px 0; }
+#project-citizenship .bullets li::before{
+  content: "✓"; font-weight: 800; color: var(--brand-2);
+  position: absolute; left: 0; top: 2px;
+  width: 20px; height: 20px; line-height: 18px; text-align: center;
+  background: #fff; border: 2px solid var(--ink); border-radius: 8px;
+  box-shadow: 2px 2px 0 rgba(0,0,0,.12);
+}
+
 /* Info cards: retro paper vibe */
 #project-cinesync .info-card{
   background:
@@ -847,6 +930,7 @@ section,
 /* Apply separate shadow just for the caret buttons in project details */
 #project-cinesync .tech-details > summary.btn::after,
 #project-six-hats .tech-details > summary.btn::after,
+#project-citizenship .tech-details > summary.btn::after,
 #project-campus-parking .project-details > summary.btn::after{
   box-shadow: var(--retro-shadow-details) !important;
 }
@@ -956,16 +1040,12 @@ section,
 }
 
 /* Architecture diagram styling inside gallery */
-#project-campus-parking .architecture-figure{
+/* Gallery hint (subtle helper text) */
+.gallery-hint{
   grid-column: 1 / -1;
-  justify-self: center;
-  max-width: 840px;
-}
-#project-campus-parking .architecture-figure img{
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+  margin: 2px 0 6px;
+  font-size: .92rem;
+  color: var(--muted);
 }
 
 /* Subtle entry animation */

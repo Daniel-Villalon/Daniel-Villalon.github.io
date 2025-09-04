@@ -273,6 +273,8 @@
       <a class="btn btn-primary projRedirect" href="https://sammyparks.com" target="_blank" rel="noopener">Live Demo</a>
     </div>
 
+    
+
     <details class="details project-details">
       <summary class="btn btn-ghost">More details + screenshots</summary>
 
@@ -283,10 +285,7 @@
       </p>
 
       <div class="gallery">
-        <figure class="architecture-figure">
-          <img src="photos/parking-architecture.svg" alt="Architecture diagram of the platform: Next.js apps → NGINX → Auth/Permit/Vehicle/Ticket/Stripe services → PostgreSQL, plus Police/Registrar partner APIs" />
-          <figcaption><strong>Architecture:</strong> frontends, gateway, microservices, databases, and partner APIs at a glance.</figcaption>
-        </figure>
+        <p class="gallery-hint" aria-label="Hint">Tip: click any image to view full size</p>
         <figure>
           <img src="photos/homescreen-sammyParks.jpg" alt="Landing page with pre-login routes" />
           <figcaption><strong>Landing:</strong> pre-login routes for registering vehicles, purchasing permits, and login/signup.</figcaption>
@@ -562,6 +561,8 @@
             <span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span>
           </div>
 
+          
+
           <details class="details tech-details">
             <summary class="btn btn-ghost">Core Stack &amp; How It Works</summary>
 
@@ -672,17 +673,91 @@
           </details>
         </article>
 
-        <article class="card project-card">
+        <article class="card project-card" id="project-citizenship">
           <div class="card-head">
             <h3>U.S. Citizenship Learning Platform</h3>
             <span class="meta">Full Stack Project • Jun – Jul 2023</span>
           </div>
           <p>
-            Full-stack study app with gamified quizzes and progress tracking to help users prepare for the U.S. citizenship test.
+            Interactive quiz app for U.S. citizenship practice. Loads questions from a database, guides users one‑by‑one with instant feedback,
+            tracks score and progress, and supports optional login‑protected pages — designed to keep learners engaged.
           </p>
           <div class="chips">
-            <span class="chip">React</span><span class="chip">Node.js</span><span class="chip">PostgreSQL</span>
+            <span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">React</span>
+            <span class="chip">Tailwind CSS</span><span class="chip">shadcn/ui</span>
+            <span class="chip">Supabase</span><span class="chip">PostgreSQL</span>
+            <span class="chip">SSR</span><span class="chip">Middleware</span>
+            <span class="chip">Accessibility</span><span class="chip">Testing</span>
           </div>
+
+          <!-- Simple carousel: add two images below (replace paths) -->
+          <div class="simple-carousel" aria-label="Citizenship Quiz Preview">
+            <button class="simple-prev" aria-label="Previous">‹</button>
+            <div class="simple-track">
+              <img src="photos/citizenshipGame/Screenshot 2025-09-04 at 10.34.47 AM.png" alt="Question card with choices and progress" class="active">
+              <img src="photos/citizenshipGame/Screenshot 2025-09-04 at 10.35.10 AM.png" alt="Correct/incorrect feedback with score badge">
+            </div>
+            <button class="simple-next" aria-label="Next">›</button>
+          </div>
+
+          <details class="details tech-details">
+            <summary class="btn btn-ghost">Core Stack &amp; How It Works</summary>
+
+            <div class="patterns-grid">
+              <section class="info-card">
+                <h4>Project Goal</h4>
+                <ul class="bullets">
+                  <li>Make citizenship prep more immersive and engaging</li>
+                  <li>Reduce friction for non‑native English learners</li>
+                </ul>
+              </section>
+
+              <section class="info-card">
+                <h4>Core Stack</h4>
+                <ul class="bullets">
+                  <li>Next.js with client/server composition</li>
+                  <li>React, Tailwind + shadcn/ui for consistent UI</li>
+                  <li>Supabase (Postgres + client SDK), SSR sessions</li>
+                </ul>
+              </section>
+
+              <section class="info-card">
+                <h4>Architecture</h4>
+                <ul class="bullets">
+                  <li>Public content and protected areas with route protection via middleware</li>
+                  <li>SSR session handling with Supabase; client SDK for in‑app data fetches</li>
+                  <li>Environment‑driven configuration across environments</li>
+                </ul>
+              </section>
+
+              <section class="info-card">
+                <h4>Data Model</h4>
+                <ul class="bullets">
+                  <li>Questions table: text prompt, choices (JSON), correct choice index</li>
+                  <li>Type‑safe reads/writes via Supabase client</li>
+                </ul>
+              </section>
+
+              <section class="info-card">
+                <h4>Product Features</h4>
+                <ul class="bullets">
+                  <li>Progress bar, score badge, per‑question card with A/B/C/D answers</li>
+                  <li>Instant green/red feedback with icons; “Next” disabled until answered</li>
+                  <li>Normalizes JSON choices + indices for reliable correctness</li>
+                </ul>
+              </section>
+
+              <section class="info-card">
+                <h4>What This Shows</h4>
+                <ul class="bullets">
+                  <li>Full‑stack Next.js + Supabase with SSR sessions</li>
+                  <li>Type‑safe React UI using modern component patterns</li>
+                  <li>Route protection with session‑aware Middleware</li>
+                  <li>Accessible, responsive UI with Tailwind tokens</li>
+                </ul>
+              </section>
+            </div>
+          </details>
         </article>
       </div>
     </section>

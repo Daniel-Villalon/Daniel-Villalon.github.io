@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760" role="img" aria-labelledby="title desc">
+  <title id="title">Driver Buy Permit – System Flow</title>
+  <desc id="desc">A focused diagram of the Driver flow: Browser (Next.js Driver App) via NGINX to Auth (REST, JWT), then Permit (GraphQL) which validates Vehicle (GraphQL), creates an order, Stripe Checkout handles payment, webhooks activate the permit, and Mailgun emails a receipt. PostgreSQL backs Permit/Vehicle data.</desc>
+  <defs>
+    <style>
+      .ink{ stroke:#20302a; stroke-width:3; }
+      .text{ font: 14px Arial, Helvetica, sans-serif; fill:#20302a; }
+      .label{ font: 700 15px Arial, Helvetica, sans-serif; fill:#20302a; }
+      .hlabel{ font: 800 18px Georgia, serif; fill:#0a4f45; }
+      .chip{ font: 12px Arial, Helvetica, sans-serif; fill:#0e6b5d; }
+      .box{ fill:#ffffff; }
+      .panel{ fill:#f7fbfa; }
+      .ext{ fill:#eaf2ff; }
+      .soft{ fill:#e5f5ef; }
+      .db{ fill:#ffffff; }
+      .shadow{ filter:url(#shadow); }
+      .arrow{ stroke:#20302a; stroke-width:2.5; fill:none; marker-end:url(#arrowHead); }
+      .dash{ stroke-dasharray:6 6; }
+      .step{ font: 700 12px Arial, Helvetica, sans-serif; fill:#0e6b5d; }
+    </style>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="6" dy="6" stdDeviation="0" flood-color="#000000" flood-opacity="0.16"/>
+    </filter>
+    <marker id="arrowHead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#20302a" />
+    </marker>
+  </defs>
+
+  <!-- Backdrop -->
+  <rect x="0" y="0" width="1200" height="760" fill="#f7fbfa"/>
+
+  <!-- Title banner -->
+  <g class="shadow">
+    <rect class="soft ink" x="40" y="24" rx="14" ry="14" width="1120" height="60"/>
+    <text class="hlabel" x="600" y="60" text-anchor="middle">Driver → Buy Permit (High‑Level Flow)</text>
+  </g>
+
+  <!-- Top row: Browser, NGINX -->
+  <g class="shadow">
+    <rect class="box ink" x="60" y="120" rx="12" ry="12" width="260" height="84"/>
+    <text class="label" x="190" y="152" text-anchor="middle">Browser</text>
+    <text class="chip" x="190" y="174" text-anchor="middle">Next.js Driver App</text>
+  </g>
+  <g class="shadow">
+    <rect class="box ink" x="360" y="120" rx="12" ry="12" width="220" height="84"/>
+    <text class="label" x="470" y="152" text-anchor="middle">NGINX</text>
+    <text class="chip" x="470" y="174" text-anchor="middle">SSL • HTTP/2 • Routing</text>
+  </g>
+
+  <!-- Arrows between browser and NGINX -->
+  <path class="arrow" d="M320,162 L360,162"/>
+
+  <!-- Middle band: Services -->
+  <g class="shadow">
+    <rect class="panel ink" x="60" y="240" rx="16" ry="16" width="1080" height="200"/>
+    <text class="hlabel" x="80" y="266">Services</text>
+
+    <!-- Auth -->
+    <g>
+      <rect class="box ink" x="80" y="280" rx="12" ry="12" width="200" height="72"/>
+      <text class="label" x="180" y="312" text-anchor="middle">Auth</text>
+      <text class="chip" x="180" y="332" text-anchor="middle">REST • JWT (roles)</text>
+    </g>
+    <!-- Permit -->
+    <g>
+      <rect class="box ink" x="320" y="280" rx="12" ry="12" width="220" height="72"/>
+      <text class="label" x="430" y="312" text-anchor="middle">Permit</text>
+      <text class="chip" x="430" y="332" text-anchor="middle">GraphQL</text>
+    </g>
+    <!-- Vehicle -->
+    <g>
+      <rect class="box ink" x="580" y="280" rx="12" ry="12" width="220" height="72"/>
+      <text class="label" x="690" y="312" text-anchor="middle">Vehicle</text>
+      <text class="chip" x="690" y="332" text-anchor="middle">GraphQL</text>
+    </g>
+    <!-- Stripe -->
+    <g>
+      <rect class="box ink" x="840" y="280" rx="12" ry="12" width="220" height="72"/>
+      <text class="label" x="950" y="312" text-anchor="middle">Stripe</text>
+      <text class="chip" x="950" y="332" text-anchor="middle">Checkout (REST)</text>
+    </g>
+  </g>
+
+  <!-- Data band: Postgres + Providers -->
+  <g class="shadow">
+    <rect class="panel ink" x="60" y="480" rx="16" ry="16" width="1080" height="220"/>
+    <text class="hlabel" x="80" y="506">Data & Notifications</text>
+
+    <!-- Permit DB -->
+    <g>
+      <rect class="db ink" x="100" y="520" width="200" height="100" rx="12"/>
+      <ellipse class="db ink" cx="200" cy="520" rx="100" ry="16"/>
+      <text class="label" x="200" y="575" text-anchor="middle">Permit DB</text>
+    </g>
+    <!-- Vehicle DB -->
+    <g>
+      <rect class="db ink" x="340" y="520" width="200" height="100" rx="12"/>
+      <ellipse class="db ink" cx="440" cy="520" rx="100" ry="16"/>
+      <text class="label" x="440" y="575" text-anchor="middle">Vehicle DB</text>
+    </g>
+    <!-- Webhooks / Mailgun panel -->
+    <g>
+      <rect class="ext ink" x="620" y="520" rx="12" ry="12" width="240" height="100"/>
+      <text class="label" x="740" y="552" text-anchor="middle">Webhooks</text>
+      <text class="chip" x="740" y="572" text-anchor="middle">Stripe → Permit Activation</text>
+    </g>
+    <g>
+      <rect class="ext ink" x="900" y="520" rx="12" ry="12" width="200" height="100"/>
+      <text class="label" x="1000" y="552" text-anchor="middle">Mailgun</text>
+      <text class="chip" x="1000" y="572" text-anchor="middle">Email Receipt</text>
+    </g>
+  </g>
+
+  <!-- Flows -->
+  <!-- 1. Browser → NGINX → Auth (login/JWT) -->
+  <path class="arrow" d="M470,204 L470,280"/>
+  <text class="step" x="478" y="240">1) Login</text>
+  <path class="arrow" d="M470,280 L180,280"/>
+
+  <!-- 2. Browser (authorized) → Permit (quote/order) -->
+  <path class="arrow" d="M470,204 C470,240 430,240 430,280"/>
+  <text class="step" x="490" y="230">2) Create order</text>
+
+  <!-- 3. Permit → Vehicle (validate vehicle) -->
+  <path class="arrow" d="M540,316 L580,316"/>
+  <text class="step" x="560" y="306">3) Validate vehicle</text>
+
+  <!-- 4. Permit → Stripe (checkout session) -->
+  <path class="arrow" d="M540,336 C700,360 820,340 840,320"/>
+  <text class="step" x="760" y="352">4) Checkout session</text>
+
+  <!-- 5. Browser → Stripe (hosted checkout) -->
+  <path class="arrow dash" d="M580,162 C760,162 950,220 950,280"/>
+  <text class="step" x="820" y="170">5) Redirect to pay</text>
+
+  <!-- 6. Stripe → Webhook → Permit DB (activate) -->
+  <path class="arrow" d="M950,352 L740,520"/>
+  <text class="step" x="900" y="420">6) Webhook</text>
+  <path class="arrow" d="M740,570 L200,570"/>
+  <text class="step" x="470" y="560">Activate permit</text>
+
+  <!-- 7. Permit → Mailgun (receipt) -->
+  <path class="arrow" d="M430,352 C520,420 900,520 900,520"/>
+  <text class="step" x="610" y="430">7) Email receipt</text>
+
+  <!-- 8. Permit ↔ Permit DB (persist) & Vehicle ↔ Vehicle DB -->
+  <path class="arrow" d="M430,352 L200,520"/>
+  <path class="arrow" d="M690,352 L440,520"/>
+
+  <!-- Legend -->
+  <g>
+    <rect class="box ink shadow" x="40" y="700" rx="8" ry="8" width="480" height="40"/>
+    <circle class="soft ink" cx="60" cy="720" r="6"/>
+    <text class="text" x="74" y="724">Internal service</text>
+    <circle class="ext ink" cx="200" cy="720" r="6"/>
+    <text class="text" x="214" y="724">External provider</text>
+    <line class="arrow" x1="350" y1="720" x2="390" y2="720"/>
+    <text class="text" x="398" y="724">Flow</text>
+  </g>
+</svg>
